@@ -1,0 +1,28 @@
+---
+layout: base.njk
+activeNav: vyrobky
+---
+{%- set t = i18n[lang] %}
+{%- set activeVyrobek = translationKey %}
+{% include "partials/submenu-vyrobky.njk" %}
+
+<section class="product-hero">
+  <div class="container">
+    <p class="breadcrumb"><a href="#">{{ t.nav.vyrobky }}</a> / {{ name }}</p>
+    <h1 class="product-hero__title">{{ name }}</h1>
+    {%- if podtitulek %}
+    <p class="product-hero__subtitle">{{ podtitulek }}</p>
+    {%- endif %}
+    <div class="btn-row">
+      <a href="tel:{{ site.telefonRaw }}" class="btn btn--primary">{{ t.zavolejte }} {{ site.telefon }}</a>
+      <a href="mailto:{{ site.email }}" class="btn btn--ghost">{{ t.napisteNam }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="product-intro">
+  <div class="container">
+    <div class="prose">{{ content | safe }}</div>
+    <p class="back-link"><a href="#">← {{ t.nav.vyrobky }}</a></p>
+  </div>
+</section>

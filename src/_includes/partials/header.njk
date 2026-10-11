@@ -1,0 +1,56 @@
+{%- set homeHref = "/" if lang == "cs" else "/" + lang + "/" %}
+{%- set t = i18n[lang] %}
+{%- set alts = collections.all | translations(translationKey) %}
+<header class="site-header" data-header>
+  <div class="container site-header__inner">
+    <a href="{{ homeHref }}" class="site-header__logo" aria-label="VUK objekt">
+      <img src="/assets/img/vuk-logo.svg" alt="VUK objekt" width="120" height="50">
+    </a>
+
+    <nav class="site-nav" aria-label="Hlavní navigace">
+      <a href="#" class="site-nav__link{{ ' is-active' if activeNav == 'vyrobky' }}">{{ t.nav.vyrobky }}</a>
+      <a href="#" class="site-nav__link{{ ' is-active' if activeNav == 'jakObjednat' }}">{{ t.nav.jakObjednat }}</a>
+      <a href="#" class="site-nav__link{{ ' is-active' if activeNav == 'casteDotazy' }}">{{ t.nav.casteDotazy }}</a>
+      <a href="#" class="site-nav__link{{ ' is-active' if activeNav == 'oNas' }}">{{ t.nav.oNas }}</a>
+      <a href="#" class="site-nav__link{{ ' is-active' if activeNav == 'kontakt' }}">{{ t.nav.kontakt }}</a>
+    </nav>
+
+    <div class="site-header__right">
+      <div class="contact">
+        <a href="tel:{{ site.telefonRaw }}" class="contact__phone">{{ site.telefon }}</a>
+        <a href="mailto:{{ site.email }}" class="contact__email">{{ site.email }}</a>
+      </div>
+      <div class="langs">
+        {%- for lng in site.languages %}
+        {%- if lng.code == lang %}
+        <span class="langs__item is-active">{{ lng.label }}</span>
+        {%- else %}
+        <a href="{{ alts | findUrl(lng.code, lng.home) }}" class="langs__item">{{ lng.label }}</a>
+        {%- endif %}
+        {%- endfor %}
+      </div>
+    </div>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+      <span class="nav-toggle__label">{{ t.menu }}</span>
+      <span class="nav-toggle__icon" aria-hidden="true"><span></span><span></span><span></span></span>
+    </button>
+  </div>
+
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Mobilní navigace" data-menu-panel>
+    <a href="#" class="mobile-menu__link">{{ t.nav.vyrobky }}</a>
+    <a href="#" class="mobile-menu__link">{{ t.nav.jakObjednat }}</a>
+    <a href="#" class="mobile-menu__link">{{ t.nav.casteDotazy }}</a>
+    <a href="#" class="mobile-menu__link">{{ t.nav.oNas }}</a>
+    <a href="#" class="mobile-menu__link">{{ t.nav.kontakt }}</a>
+    <div class="mobile-menu__langs">
+      {%- for lng in site.languages %}
+      {%- if lng.code == lang %}
+      <span class="langs__item is-active">{{ lng.label }}</span>
+      {%- else %}
+      <a href="{{ alts | findUrl(lng.code, lng.home) }}" class="langs__item">{{ lng.label }}</a>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+  </nav>
+</header>

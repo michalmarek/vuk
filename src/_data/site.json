@@ -1,0 +1,15 @@
+{
+  "nazev": "VUK objekt s.r.o.",
+  "telefon": "+420 603 168 843",
+  "telefonRaw": "+420603168843",
+  "email": "vuk@vuk.cz",
+  "adresa": {
+    "ulice": "Domažlická 1123/194",
+    "mesto": "318 00 Plzeň (areál ESSPE)"
+  },
+  "ico": "00000000",
+  "languages": [
+    { "code": "cs", "label": "CZ", "home": "/" },
+    { "code": "de", "label": "DE", "home": "/de/" }
+  ]
+}

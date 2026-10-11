@@ -1,0 +1,19 @@
+{%- set t = i18n[lang] %}
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__brand">
+      <img src="/assets/img/vuk-logo-white.svg" alt="VUK objekt" width="72" height="30">
+      <nav class="site-footer__nav">
+        <a href="#">{{ t.nav.vyrobky }}</a>
+        <a href="#">{{ t.nav.jakObjednat }}</a>
+        <a href="#">{{ t.nav.casteDotazy }}</a>
+        <a href="#">{{ t.nav.oNas }}</a>
+        <a href="#">{{ t.nav.kontakt }}</a>
+      </nav>
+    </div>
+    <div class="site-footer__meta">
+      <span>{{ site.telefon }} · {{ site.email }}</span>
+      <span class="site-footer__copy">{{ t.copyright }}</span>
+    </div>
+  </div>
+</footer>

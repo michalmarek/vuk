@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600;700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#E6E3DE;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color:#2E2A2C;-webkit-font-smoothing:antialiased}
+a{color:#AE4A84;text-decoration:none}
+a:hover{color:#7E2F5E}
+details summary::-webkit-details-marker{display:none}
+</style>
+</helmet>
+
+<section style="padding:64px;display:flex;flex-direction:column;gap:32px">
+<div style="display:flex;flex-direction:column;gap:6px">
+<div style="font:600 13px/1 ui-monospace,Menlo,monospace;letter-spacing:.08em;text-transform:uppercase;color:#7A7377">VUK objekt · návrh webu · kolo 3</div>
+<div style="font:700 32px/1.1 'Zilla Slab',serif">Úvodní stránka (desktop + mobil) a vzor stránky výrobku</div>
+</div>
+<div style="display:flex;gap:48px;align-items:flex-start;flex-wrap:wrap">
+
+<!-- ================= 1a HP DESKTOP ================= -->
+<div id="1a" style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;gap:10px;align-items:center"><span style="background:#2E2A2C;color:#fff;font:700 13px/1 ui-monospace,Menlo,monospace;padding:6px 8px">1a</span><span style="font:600 14px/1 'Helvetica Neue',Arial,sans-serif;color:#5F595C">Úvodní stránka · desktop 1440</span></div>
+<div data-screen-label="01 Úvod desktop" style="width:1440px;background:#FFFFFF;box-shadow:0 1px 3px rgba(0,0,0,.08)">
+
+<header style="border-bottom:1px solid #E7E3DC">
+<div style="max-width:1200px;margin:0 auto;padding:0 40px;height:92px;display:flex;align-items:center;justify-content:space-between;gap:40px">
+<img src="assets/vuk-logo.svg" alt="VUK objekt" style="height:50px;display:block">
+<nav style="display:flex;gap:32px;font-size:15px;font-weight:500">
+<a href="#" style="color:#2E2A2C">Výrobky</a><a href="#" style="color:#2E2A2C">Jak objednat</a><a href="#" style="color:#2E2A2C">Časté dotazy</a><a href="#" style="color:#2E2A2C">O nás</a><a href="#" style="color:#2E2A2C">Kontakt</a>
+</nav>
+<div style="display:flex;align-items:center;gap:28px">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">
+<a href="tel:+420603168843" style="font:700 18px/1 'Zilla Slab',serif;color:#AE4A84;letter-spacing:.01em">+420 603 168 843</a>
+<a href="mailto:vuk@vuk.cz" style="font-size:14px;color:#5F595C">vuk@vuk.cz</a>
+</div>
+<div style="display:flex;gap:10px;font-size:13px;font-weight:600;letter-spacing:.04em;padding-left:24px;border-left:1px solid #E7E3DC"><span style="color:#2E2A2C;border-bottom:2px solid #AE4A84;padding-bottom:2px">CZ</span><a href="#" style="color:#8D8589">DE</a><a href="#" style="color:#8D8589">EN</a></div>
+</div>
+</div>
+</header>
+
+<sc-if value="{{ heroSplit }}" hint-placeholder-val="{{ true }}">
+<div style="max-width:1200px;margin:0 auto;padding:56px 40px 72px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:64px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:28px">
+<div style="font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#AE4A84">Zakázková keramická dílna · Plzeň</div>
+<h1 style="margin:0;font:700 64px/1.02 'Zilla Slab',serif;letter-spacing:-.01em;text-wrap:balance">Tvoříme keramiku, která vydrží generace.</h1>
+<p style="margin:0;font-size:19px;line-height:1.55;color:#5F595C;text-wrap:pretty;max-width:460px">Vyrábíme historickou dlažbu, obklady a tvarovky pro opravy domů i velké rekonstrukce. Od jednoho kusu po rozsáhlé projekty.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:4px">
+<a href="tel:+420603168843" style="background:#AE4A84;color:#fff;padding:17px 26px;font-size:16px;font-weight:600" style-hover="background:#7E2F5E;color:#fff">Zavolejte: +420 603 168 843</a>
+<a href="mailto:vuk@vuk.cz" style="border:1.5px solid #2E2A2C;color:#2E2A2C;padding:16px 24px;font-size:16px;font-weight:600" style-hover="background:#2E2A2C;color:#fff">Napište nám</a>
+</div>
+</div>
+<img src="img/57.jpg" alt="Vzorky historických dlaždic z naší výroby" style="width:100%;height:500px;object-fit:cover;display:block">
+</div>
+</sc-if>
+<sc-if value="{{ heroFull }}" hint-placeholder-val="{{ false }}">
+<div style="position:relative;height:620px;background:#2E2A2C;overflow:hidden">
+<img src="img/09.jpg" alt="Ruční malování vzoru dlaždice" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.72">
+<div style="position:relative;box-sizing:border-box;max-width:1200px;margin:0 auto;padding:0 40px 104px;height:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:24px;color:#fff">
+<div style="font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase">Zakázková keramická dílna · Plzeň</div>
+<h1 style="margin:0;font:700 76px/1 'Zilla Slab',serif;max-width:760px;text-wrap:balance">Tvoříme keramiku, která vydrží generace.</h1>
+<p style="margin:0;font-size:20px;line-height:1.5;max-width:560px">Vyrábíme historickou dlažbu, obklady a tvarovky pro opravy domů i velké rekonstrukce. Od jednoho kusu po rozsáhlé projekty.</p>
+<div style="display:flex;gap:12px;padding-top:12px">
+<a href="tel:+420603168843" style="background:#AE4A84;color:#fff;padding:17px 26px;font-size:16px;font-weight:600" style-hover="background:#7E2F5E;color:#fff">Zavolejte: +420 603 168 843</a>
+<a href="mailto:vuk@vuk.cz" style="border:1.5px solid #fff;color:#fff;padding:16px 24px;font-size:16px;font-weight:600">Napište nám</a>
+</div>
+</div>
+</div>
+</sc-if>
+
+<div style="background:#F4F1EA">
+<div style="max-width:1200px;margin:0 auto;padding:80px 40px 96px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px">
+<div style="display:flex;flex-direction:column;gap:14px">
+<div style="font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#AE4A84">6 oborů výroby</div>
+<h2 style="margin:0;font:700 56px/1 'Zilla Slab',serif">Co vyrábíme</h2>
+</div>
+<p style="margin:0;font-size:17px;line-height:1.55;color:#5F595C;max-width:460px">Každý výrobek děláme ručně, na zakázku a s neomezenou paletou barev a tvarů.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px">
+<sc-for list="{{ products }}" as="p" hint-placeholder-count="6">
+<a href="#" style="display:flex;flex-direction:column;background:#fff;color:#2E2A2C;box-shadow:0 1px 0 #DDD7CC" style-hover="color:#AE4A84;box-shadow:0 0 0 2px #AE4A84">
+<div style="position:relative">
+<img src="{{ p.img }}" alt="{{ p.name }}" style="width:100%;aspect-ratio:16/10;object-fit:cover;display:block">
+<div style="position:absolute;left:28px;bottom:-44px;width:96px;height:96px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(46,42,44,.12)">
+<img src="{{ p.ico }}" alt="" style="width:68px;height:68px;display:block">
+</div>
+</div>
+<div style="padding:64px 28px 30px;display:flex;flex-direction:column;gap:10px;flex:1">
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font:700 30px/1.08 'Zilla Slab',serif">{{ p.name }}</span><span style="font-size:22px;color:#AE4A84">→</span></div>
+<span style="font-size:16px;line-height:1.5;color:#5F595C;text-wrap:pretty">{{ p.line }}</span>
+</div>
+</a>
+</sc-for>
+</div>
+</div>
+</div>
+
+<sc-if value="{{ showFacts }}" hint-placeholder-val="{{ true }}">
+<div style="border-top:1px solid #E7E3DC;border-bottom:1px solid #E7E3DC">
+<div style="max-width:1200px;margin:0 auto;padding:40px 40px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:32px">
+<sc-for list="{{ facts }}" as="f" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font:700 34px/1 'Zilla Slab',serif;color:#AE4A84">{{ f.big }}</span><span style="font-size:15px;line-height:1.45;color:#5F595C">{{ f.small }}</span></div>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<div style="background:#fff">
+<div style="max-width:1200px;margin:0 auto;padding:112px 40px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:24px;position:relative">
+<h2 style="margin:0;font:700 44px/1.05 'Zilla Slab',serif">Jak objednat</h2>
+<p style="margin:0;font-size:17px;line-height:1.6;color:#5F595C;text-wrap:pretty">Každá zakázka je u nás jedinečná. Proto s vámi projdeme celým procesem krok za krokem, od první konzultace po finální výrobek.</p>
+<img src="img/25.jpg" alt="Ruční formování dlaždice" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block;margin-top:16px">
+</div>
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="6">
+<div style="display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;padding:24px 0;border-top:1px solid #DDD7CC">
+<span style="font:700 22px/1.2 'Zilla Slab',serif;color:#AE4A84">{{ s.n }}</span>
+<div style="display:flex;flex-direction:column;gap:6px"><span style="font:700 22px/1.2 'Zilla Slab',serif">{{ s.t }}</span><span style="font-size:15px;line-height:1.55;color:#5F595C">{{ s.d }}</span></div>
+</div>
+</sc-for>
+<a href="#" style="margin-top:24px;font-size:16px;font-weight:600;border-bottom:1.5px solid #AE4A84;align-self:flex-start;padding-bottom:3px">Celý postup objednávky →</a>
+</div>
+</div>
+</div>
+
+<div style="background:#F4F1EA;margin-bottom:112px">
+<div style="max-width:1200px;margin:0 auto;padding:112px 40px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:72px">
+<div style="display:flex;flex-direction:column;gap:24px">
+<h2 style="margin:0;font:700 44px/1.05 'Zilla Slab',serif;text-wrap:balance">Od Hlavního nádraží v Praze po nemocnici v Ósace</h2>
+<p style="margin:0;font-size:17px;line-height:1.6;color:#5F595C;text-wrap:pretty">Naše produkty naleznete v historických objektech i v nových stavbách po celém světě. Spolupracujeme s architekty, restaurátory, stavebními firmami i bytovými družstvy.</p>
+<div style="display:flex;flex-direction:column;margin-top:8px">
+<sc-for list="{{ refs }}" as="r" hint-placeholder-count="6">
+<div style="display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid #E7E3DC;font-size:16px"><span style="font-weight:600">{{ r.name }}</span><span style="color:#8D8589">{{ r.what }}</span></div>
+</sc-for>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto;gap:16px">
+<div style="grid-column:1/3;aspect-ratio:16/10;background:repeating-linear-gradient(135deg,#EFEBE3 0 10px,#E7E2D8 10px 20px);display:flex;align-items:flex-end;padding:16px;box-sizing:border-box"><span style="font:12px/1.4 ui-monospace,Menlo,monospace;color:#6E676B;background:#fff;padding:4px 8px">foto realizace · Velká synagoga, Plzeň</span></div>
+<div style="aspect-ratio:1;background:repeating-linear-gradient(135deg,#EFEBE3 0 10px,#E7E2D8 10px 20px);display:flex;align-items:flex-end;padding:16px;box-sizing:border-box"><span style="font:12px/1.4 ui-monospace,Menlo,monospace;color:#6E676B;background:#fff;padding:4px 8px">foto · Café Imperial</span></div>
+<div style="aspect-ratio:1;background:repeating-linear-gradient(135deg,#EFEBE3 0 10px,#E7E2D8 10px 20px);display:flex;align-items:flex-end;padding:16px;box-sizing:border-box"><span style="font:12px/1.4 ui-monospace,Menlo,monospace;color:#6E676B;background:#fff;padding:4px 8px">foto · Obecní dům</span></div>
+</div>
+</div>
+</div>
+
+<div style="max-width:1200px;margin:0 auto;padding:0 40px 112px;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:center">
+<img src="img/61.jpg" alt="Výrobní hala VUK objekt" style="width:100%;aspect-ratio:3/2;object-fit:cover;display:block">
+<div style="display:flex;flex-direction:column;gap:20px">
+<h2 style="margin:0;font:700 44px/1.05 'Zilla Slab',serif">O nás</h2>
+<p style="margin:0;font-size:17px;line-height:1.6;color:#5F595C;text-wrap:pretty">Jsme zakázková keramická dílna specializující se na výrobu keramických prvků pro exteriéry i interiéry budov.</p>
+<p style="margin:0;font-size:17px;line-height:1.6;color:#5F595C;text-wrap:pretty">Náš tým deseti zkušených pracovníků spojuje celoživotní zkušenosti z oboru stavební a žárovzdorné keramiky s osobním přístupem ke každému projektu.</p>
+<a href="#" style="font-size:16px;font-weight:600;border-bottom:1.5px solid #AE4A84;align-self:flex-start;padding-bottom:3px;margin-top:8px">Více o dílně →</a>
+</div>
+</div>
+
+<div style="background:#AE4A84;color:#fff">
+<div style="max-width:1200px;margin:0 auto;padding:88px 40px;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:end">
+<div style="display:flex;flex-direction:column;gap:20px">
+<h2 style="margin:0;font:700 48px/1.05 'Zilla Slab',serif">Máte dotaz, chcete objednat?</h2>
+<p style="margin:0;font-size:18px;line-height:1.55;max-width:560px">Zavolejte nebo napište s popisem projektu. Rádi přijedeme na místo a prohlédneme si keramiku, která má být nahrazena nebo doplněna.</p>
+<div style="display:flex;gap:48px;padding-top:16px;flex-wrap:wrap">
+<a href="tel:+420603168843" style="color:#fff;font:700 40px/1 'Zilla Slab',serif" style-hover="color:#fff;text-decoration:underline">+420 603 168 843</a>
+<a href="mailto:vuk@vuk.cz" style="color:#fff;font:700 40px/1 'Zilla Slab',serif" style-hover="color:#fff;text-decoration:underline">vuk@vuk.cz</a>
+</div>
+</div>
+<div style="font-size:16px;line-height:1.65;border-left:1px solid rgba(255,255,255,.5);padding-left:32px">
+<div style="font-weight:700">VUK objekt s.r.o.</div>
+<div>Domažlická 1123/194</div>
+<div>318 00 Plzeň (areál ESSPE)</div>
+<div style="padding-top:12px">IČO: 00000000</div>
+</div>
+</div>
+</div>
+
+<footer style="background:#2E2A2C;color:#C9C3C6">
+<div style="max-width:1200px;margin:0 auto;padding:36px 40px;display:flex;justify-content:space-between;align-items:center;gap:32px;font-size:14px">
+<div style="display:flex;align-items:center;gap:40px">
+<img src="assets/vuk-logo-white.svg" alt="VUK objekt" style="height:30px;display:block">
+<nav style="display:flex;gap:24px"><a href="#" style="color:#C9C3C6">Výrobky</a><a href="#" style="color:#C9C3C6">Jak objednat</a><a href="#" style="color:#C9C3C6">Časté dotazy</a><a href="#" style="color:#C9C3C6">O nás</a><a href="#" style="color:#C9C3C6">Kontakt</a></nav>
+</div>
+<div style="display:flex;gap:24px;align-items:center"><span>+420 603 168 843 · vuk@vuk.cz</span><span style="color:#8D8589">© VUK objekt s.r.o.</span></div>
+</div>
+</footer>
+</div>
+</div>
+
+<!-- ================= 1b HP MOBILE ================= -->
+<div id="1b" style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;gap:10px;align-items:center"><span style="background:#2E2A2C;color:#fff;font:700 13px/1 ui-monospace,Menlo,monospace;padding:6px 8px">1b</span><span style="font:600 14px/1 'Helvetica Neue',Arial,sans-serif;color:#5F595C">Úvodní stránka · mobil 390</span></div>
+<div data-screen-label="02 Úvod mobil" style="width:390px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.08);position:relative">
+<header style="height:64px;padding:0 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #E7E3DC;position:sticky;top:0;background:#fff;z-index:2">
+<img src="assets/vuk-logo.svg" alt="VUK objekt" style="height:34px;display:block">
+<div style="display:flex;align-items:center">
+<button onClick="{{ toggleMenu }}" style="height:44px;padding:0 0 0 8px;border:0;background:none;display:flex;align-items:center;gap:10px;font:600 15px 'Helvetica Neue',Arial,sans-serif;color:#2E2A2C;cursor:pointer">Menu<span style="display:flex;flex-direction:column;gap:5px"><span style="width:20px;height:2px;background:#2E2A2C"></span><span style="width:20px;height:2px;background:#2E2A2C"></span><span style="width:20px;height:2px;background:#2E2A2C"></span></span></button></div>
+</header>
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+<nav style="position:absolute;top:64px;left:0;right:0;background:#fff;z-index:3;border-bottom:1px solid #E7E3DC;padding:8px 20px 24px;display:flex;flex-direction:column">
+<sc-for list="{{ mnav }}" as="m" hint-placeholder-count="5"><a href="#" style="color:#2E2A2C;font:700 24px/1 'Zilla Slab',serif;padding:16px 0;border-bottom:1px solid #EFEBE3">{{ m }}</a></sc-for>
+<div style="display:flex;gap:16px;padding-top:20px;font-size:14px;font-weight:600"><span>CZ</span><a href="#" style="color:#8D8589">DE</a><a href="#" style="color:#8D8589">EN</a></div>
+</nav>
+</sc-if>
+<img src="img/57.jpg" alt="Vzorky historických dlaždic" style="width:100%;height:280px;object-fit:cover;display:block">
+<div style="padding:28px 20px 40px;display:flex;flex-direction:column;gap:18px">
+<div style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#AE4A84">Zakázková keramická dílna · Plzeň</div>
+<h1 style="margin:0;font:700 40px/1.04 'Zilla Slab',serif;text-wrap:balance">Tvoříme keramiku, která vydrží generace.</h1>
+<p style="margin:0;font-size:17px;line-height:1.55;color:#5F595C">Vyrábíme historickou dlažbu, obklady a tvarovky pro opravy domů i velké rekonstrukce. Od jednoho kusu po rozsáhlé projekty.</p>
+</div>
+<div style="background:#F4F1EA;padding:40px 20px 48px;margin-bottom:48px;display:flex;flex-direction:column;gap:24px">
+<h2 style="margin:0;font:700 36px/1.05 'Zilla Slab',serif">Co vyrábíme</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+<sc-for list="{{ products }}" as="p" hint-placeholder-count="6">
+<a href="#" style="display:flex;flex-direction:column;background:#fff;color:#2E2A2C">
+<div style="position:relative">
+<img src="{{ p.img }}" alt="{{ p.name }}" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block">
+<div style="position:absolute;left:12px;bottom:-26px;width:56px;height:56px;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(46,42,44,.12)">
+<img src="{{ p.ico }}" alt="" style="width:40px;height:40px;display:block">
+</div>
+</div>
+<span style="padding:36px 12px 16px;font:700 18px/1.15 'Zilla Slab',serif">{{ p.name }}</span>
+</a>
+</sc-for>
+</div>
+</div>
+<sc-if value="{{ showFacts }}" hint-placeholder-val="{{ true }}">
+<div style="margin:0 20px 56px;display:grid;grid-template-columns:1fr 1fr;gap:24px 16px;border-bottom:1px solid #E7E3DC;padding:28px 0">
+<sc-for list="{{ facts }}" as="f" hint-placeholder-count="4">
+<div style="display:flex;flex-direction:column;gap:4px"><span style="font:700 26px/1 'Zilla Slab',serif;color:#AE4A84">{{ f.big }}</span><span style="font-size:14px;line-height:1.4;color:#5F595C">{{ f.small }}</span></div>
+</sc-for>
+</div>
+</sc-if>
+<div style="background:#fff;padding:0 20px 48px;display:flex;flex-direction:column;gap:8px">
+<h2 style="margin:0 0 12px;font:700 32px/1.05 'Zilla Slab',serif">Jak objednat</h2>
+<sc-for list="{{ steps }}" as="s" hint-placeholder-count="6">
+<div style="display:grid;grid-template-columns:40px minmax(0,1fr);gap:8px;padding:16px 0;border-top:1px solid #DDD7CC">
+<span style="font:700 18px/1.25 'Zilla Slab',serif;color:#AE4A84">{{ s.n }}</span><span style="font:700 18px/1.25 'Zilla Slab',serif">{{ s.t }}</span>
+</div>
+</sc-for>
+<a href="#" style="margin-top:12px;font-size:16px;font-weight:600;align-self:flex-start;border-bottom:1.5px solid #AE4A84;padding-bottom:3px">Celý postup →</a>
+</div>
+<div style="padding:56px 20px;display:flex;flex-direction:column;gap:18px">
+<h2 style="margin:0;font:700 30px/1.08 'Zilla Slab',serif">Od Hlavního nádraží v Praze po nemocnici v Ósace</h2>
+<div style="aspect-ratio:4/3;background:repeating-linear-gradient(135deg,#EFEBE3 0 10px,#E7E2D8 10px 20px);display:flex;align-items:flex-end;padding:12px;box-sizing:border-box"><span style="font:11px/1.4 ui-monospace,Menlo,monospace;color:#6E676B;background:#fff;padding:4px 8px">foto realizace · Velká synagoga, Plzeň</span></div>
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ refsShort }}" as="r" hint-placeholder-count="4"><div style="padding:12px 0;border-bottom:1px solid #E7E3DC;font-size:15px;font-weight:600">{{ r.name }}</div></sc-for>
+</div>
+</div>
+<div style="background:#AE4A84;color:#fff;padding:48px 20px 40px;display:flex;flex-direction:column;gap:16px">
+<h2 style="margin:0;font:700 30px/1.08 'Zilla Slab',serif">Máte dotaz, chcete objednat?</h2>
+<a href="tel:+420603168843" style="color:#fff;font:700 28px/1 'Zilla Slab',serif;padding-top:8px">+420 603 168 843</a>
+<a href="mailto:vuk@vuk.cz" style="color:#fff;font:700 28px/1 'Zilla Slab',serif">vuk@vuk.cz</a>
+<div style="font-size:15px;line-height:1.6;padding-top:16px;border-top:1px solid rgba(255,255,255,.5)">VUK objekt s.r.o.<br>Domažlická 1123/194<br>318 00 Plzeň (areál ESSPE)</div>
+</div>
+<footer style="background:#2E2A2C;color:#C9C3C6;padding:28px 20px 100px;font-size:14px;display:flex;flex-direction:column;gap:16px">
+<nav style="display:flex;flex-wrap:wrap;gap:12px 20px"><a href="#" style="color:#C9C3C6">Výrobky</a><a href="#" style="color:#C9C3C6">Jak objednat</a><a href="#" style="color:#C9C3C6">Časté dotazy</a><a href="#" style="color:#C9C3C6">O nás</a><a href="#" style="color:#C9C3C6">Kontakt</a></nav>
+<span style="color:#8D8589">© VUK objekt s.r.o.</span>
+</footer>
+<sc-if value="{{ stickyBar }}" hint-placeholder-val="{{ true }}">
+<div style="position:sticky;bottom:0;display:grid;grid-template-columns:1fr 1fr;box-shadow:0 -1px 0 #E7E3DC;margin-top:-72px">
+<a href="tel:+420603168843" style="height:72px;display:flex;align-items:center;justify-content:center;background:#AE4A84;color:#fff;font-size:17px;font-weight:700">Zavolat</a>
+<a href="mailto:vuk@vuk.cz" style="height:72px;display:flex;align-items:center;justify-content:center;background:#fff;color:#2E2A2C;font-size:17px;font-weight:700">Napsat e-mail</a>
+</div>
+</sc-if>
+</div>
+</div>
+
+<!-- ================= 1c PRODUCT DESKTOP ================= -->
+<div id="1c" style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;gap:10px;align-items:center"><span style="background:#2E2A2C;color:#fff;font:700 13px/1 ui-monospace,Menlo,monospace;padding:6px 8px">1c</span><span style="font:600 14px/1 'Helvetica Neue',Arial,sans-serif;color:#5F595C">Stránka výrobku · Historická dlažba · desktop 1440</span></div>
+<div data-screen-label="03 Výrobek desktop" style="width:1440px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.08)">
+<header style="border-bottom:1px solid #E7E3DC">
+<div style="max-width:1200px;margin:0 auto;padding:0 40px;height:92px;display:flex;align-items:center;justify-content:space-between;gap:40px">
+<img src="assets/vuk-logo.svg" alt="VUK objekt" style="height:50px;display:block">
+<nav style="display:flex;gap:32px;font-size:15px;font-weight:500">
+<a href="#" style="color:#AE4A84;border-bottom:2px solid #AE4A84;padding-bottom:4px">Výrobky</a><a href="#" style="color:#2E2A2C">Jak objednat</a><a href="#" style="color:#2E2A2C">Časté dotazy</a><a href="#" style="color:#2E2A2C">O nás</a><a href="#" style="color:#2E2A2C">Kontakt</a>
+</nav>
+<div style="display:flex;align-items:center;gap:28px">
+<div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px">
+<a href="tel:+420603168843" style="font:700 18px/1 'Zilla Slab',serif;color:#AE4A84">+420 603 168 843</a>
+<a href="mailto:vuk@vuk.cz" style="font-size:14px;color:#5F595C">vuk@vuk.cz</a>
+</div>
+<div style="display:flex;gap:10px;font-size:13px;font-weight:600;letter-spacing:.04em;padding-left:24px;border-left:1px solid #E7E3DC"><span style="border-bottom:2px solid #AE4A84;padding-bottom:2px">CZ</span><a href="#" style="color:#8D8589">DE</a><a href="#" style="color:#8D8589">EN</a></div>
+</div>
+</div>
+</header>
+<div style="background:#F4F1EA;border-bottom:1px solid #E7E3DC">
+<div style="max-width:1200px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr))">
+<sc-for list="{{ productTabs }}" as="t" hint-placeholder-count="6">
+<a href="#" style="display:flex;align-items:center;gap:12px;padding:16px 14px;min-height:88px;box-sizing:border-box;background:{{ t.bg }};color:{{ t.color }};font:700 17px/1.15 'Zilla Slab',serif" style-hover="background:#fff;color:#AE4A84">
+<img src="{{ t.ico }}" alt="" style="flex:none;width:44px;height:44px;display:block">
+<span>{{ t.name }}</span>
+</a>
+</sc-for>
+</div>
+</div>
+
+<sc-if value="{{ pSplit }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1200px;margin:0 auto;padding:64px 40px 88px;display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:64px;align-items:end">
+<div style="display:flex;flex-direction:column;gap:24px;padding-bottom:8px">
+<div style="font-size:13px;color:#8D8589"><a href="#" style="color:#8D8589">Výrobky</a> / Historická dlažba</div>
+<h1 style="margin:0;font:700 68px/1 'Zilla Slab',serif">Historická dlažba</h1>
+<p style="margin:0;font:600 24px/1.3 'Zilla Slab',serif;color:#AE4A84">Tradiční řemeslná výroba pro historické interiéry</p>
+<p style="margin:0;font-size:18px;line-height:1.6;color:#5F595C;text-wrap:pretty">Nabízíme zhotovení všech tradičních vzorů dlaždic, které můžete najít v historických budovách, jako jsou divadla, radnice, kavárny, církevní stavby, kulturní památky, sokolovny a měšťanské bytové domy. Veškerá výroba dlaždic probíhá ručně s použitím tradičních metod, abychom dosáhli původního vzhledu i životnosti.</p>
+<div style="display:flex;gap:12px;padding-top:4px">
+<a href="tel:+420603168843" style="background:#AE4A84;color:#fff;padding:16px 24px;font-size:16px;font-weight:600" style-hover="background:#7E2F5E;color:#fff">Zavolejte: +420 603 168 843</a>
+<a href="mailto:vuk@vuk.cz" style="border:1.5px solid #2E2A2C;color:#2E2A2C;padding:15px 22px;font-size:16px;font-weight:600">Napište nám</a>
+</div>
+</div>
+<img src="img/09.jpg" alt="Ruční malování vzoru historické dlaždice" style="width:100%;aspect-ratio:5/4;object-fit:cover;display:block">
+</div>
+</sc-if>
+<sc-if value="{{ pFull }}" hint-placeholder-val="{{ true }}">
+<div style="position:relative;height:560px;background:#2E2A2C;overflow:hidden">
+<img src="img/09.jpg" alt="Ruční malování vzoru historické dlaždice" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7">
+<div style="position:relative;box-sizing:border-box;max-width:1200px;margin:0 auto;padding:0 40px 88px;height:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:20px;color:#fff">
+<div style="font-size:13px"><a href="#" style="color:#fff">Výrobky</a> / Historická dlažba</div>
+<h1 style="margin:0;font:700 80px/1 'Zilla Slab',serif">Historická dlažba</h1>
+<p style="margin:0;font:600 26px/1.3 'Zilla Slab',serif">Tradiční řemeslná výroba pro historické interiéry</p>
+<div style="display:flex;gap:12px;padding-top:12px">
+<a href="tel:+420603168843" style="background:#AE4A84;color:#fff;padding:17px 26px;font-size:16px;font-weight:600" style-hover="background:#7E2F5E;color:#fff">Zavolejte: +420 603 168 843</a>
+<a href="mailto:vuk@vuk.cz" style="border:1.5px solid #fff;color:#fff;padding:16px 24px;font-size:16px;font-weight:600">Napište nám</a>
+</div>
+</div>
+</div>
+<div style="max-width:1200px;margin:0 auto;padding:72px 40px 64px">
+<p style="margin:0;max-width:820px;font-size:21px;line-height:1.6;color:#2E2A2C;text-wrap:pretty">Nabízíme zhotovení všech tradičních vzorů dlaždic, které můžete najít v historických budovách, jako jsou divadla, radnice, kavárny, církevní stavby, kulturní památky, sokolovny a měšťanské bytové domy. Veškerá výroba dlaždic probíhá ručně s použitím tradičních metod, abychom dosáhli původního vzhledu i životnosti.</p>
+</div>
+</sc-if>
+
+<div style="max-width:1200px;margin:0 auto;padding:0 40px 104px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px;border-top:1px solid #E7E3DC;padding-top:56px">
+<sc-for list="{{ dlazbaBlocks }}" as="b" hint-placeholder-count="3">
+<div style="display:flex;flex-direction:column;gap:14px">
+<h3 style="margin:0;font:700 26px/1.15 'Zilla Slab',serif">{{ b.t }}</h3>
+<p style="margin:0;font-size:16px;line-height:1.65;color:#5F595C;text-wrap:pretty">{{ b.d }}</p>
+</div>
+</sc-for>
+</div>
+
+<div style="background:#F4F1EA">
+<div style="max-width:1200px;margin:0 auto;padding:96px 40px;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:center">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+<img src="img/21.jpg" alt="Míchání pigmentů pro probarvení hmoty" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block">
+<img src="img/37.jpg" alt="Sádrové formy na dlaždice" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;margin-top:48px">
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<h2 style="margin:0;font:700 40px/1.05 'Zilla Slab',serif">Tradiční vzory a technologie</h2>
+<p style="margin:0;font-size:17px;line-height:1.6;color:#5F595C">Naše nabídka zahrnuje:</p>
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ dlazbaList }}" as="l" hint-placeholder-count="4"><div style="padding:14px 0;border-top:1px solid #DDD7CC;font-size:17px;font-weight:600">{{ l }}</div></sc-for>
+</div>
+<p style="margin:0;font-size:15px;line-height:1.6;color:#5F595C;text-wrap:pretty">Všechny dlaždice vyrábíme s ohledem na jejich budoucí užití – zajišťujeme odpovídající pevnost, odolnost proti obrusu a snadnou údržbu, kterou vyžaduje provoz historických objektů.</p>
+</div>
+</div>
+</div>
+
+<div style="max-width:1200px;margin:0 auto;padding:104px 40px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px">
+<h2 style="margin:0;font:700 44px/1.05 'Zilla Slab',serif">Ukázky realizované dlažby</h2>
+<span style="font-size:15px;color:#8D8589">+42 dalších realizací</span>
+</div>
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px">
+<sc-for list="{{ dlazbaRefs }}" as="r" hint-placeholder-count="8">
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="aspect-ratio:1;background:repeating-linear-gradient(135deg,#EFEBE3 0 10px,#E7E2D8 10px 20px);display:flex;align-items:flex-end;padding:12px;box-sizing:border-box"><span style="font:11px/1.4 ui-monospace,Menlo,monospace;color:#6E676B;background:#fff;padding:3px 6px">foto realizace</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:600">{{ r.name }}</span><span style="font-size:14px;color:#8D8589">{{ r.city }}</span></div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="max-width:1200px;margin:0 auto;padding:0 40px 104px;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:72px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:8px">
+<h2 style="margin:0 0 16px;font:700 40px/1.05 'Zilla Slab',serif">Časté dotazy k dlažbě</h2>
+<sc-for list="{{ faqs }}" as="q" hint-placeholder-count="4">
+<details style="border-top:1px solid #E7E3DC;padding:0">
+<summary style="list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:24px;padding:22px 0;font:700 21px/1.25 'Zilla Slab',serif">{{ q.q }}<span style="color:#AE4A84;font-family:'Helvetica Neue',Arial,sans-serif;font-weight:400">+</span></summary>
+<p style="margin:0;padding:0 48px 24px 0;font-size:16px;line-height:1.65;color:#5F595C">{{ q.a }}</p>
+</details>
+</sc-for>
+<a href="#" style="margin-top:16px;font-size:16px;font-weight:600;align-self:flex-start;border-bottom:1.5px solid #AE4A84;padding-bottom:3px">Všechny časté dotazy →</a>
+</div>
+<div style="background:#AE4A84;color:#fff;padding:40px;display:flex;flex-direction:column;gap:14px">
+<h3 style="margin:0;font:700 30px/1.1 'Zilla Slab',serif">Máte dotaz, chcete objednat?</h3>
+<p style="margin:0;font-size:16px;line-height:1.55">Zjistěte více o tom, <a href="#" style="color:#fff;text-decoration:underline">jak objednat</a>, nebo nás kontaktujte:</p>
+<div style="display:flex;flex-direction:column;gap:6px;padding-top:12px;border-top:1px solid rgba(255,255,255,.5);margin-top:8px">
+<span style="font-size:15px;font-weight:700">Jana Fialová</span>
+<a href="tel:+420605217473" style="color:#fff;font:700 28px/1.1 'Zilla Slab',serif">+420 605 217 473</a>
+<a href="mailto:vuk@vuk.cz" style="color:#fff;font:700 28px/1.1 'Zilla Slab',serif">vuk@vuk.cz</a>
+</div>
+</div>
+</div>
+
+<div style="background:#F4F1EA">
+<div style="max-width:1200px;margin:0 auto;padding:72px 40px;display:flex;flex-direction:column;gap:32px">
+<h2 style="margin:0;font:700 32px/1.05 'Zilla Slab',serif">Další výrobky</h2>
+<div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:20px">
+<sc-for list="{{ otherProducts }}" as="p" hint-placeholder-count="5">
+<a href="#" style="display:flex;flex-direction:column;gap:12px;color:#2E2A2C" style-hover="color:#AE4A84">
+<img src="{{ p.img }}" alt="{{ p.name }}" style="width:100%;aspect-ratio:4/3;object-fit:cover;display:block">
+<span style="font:700 19px/1.15 'Zilla Slab',serif">{{ p.name }}</span>
+</a>
+</sc-for>
+</div>
+</div>
+</div>
+
+<footer style="background:#2E2A2C;color:#C9C3C6">
+<div style="max-width:1200px;margin:0 auto;padding:36px 40px;display:flex;justify-content:space-between;align-items:center;gap:32px;font-size:14px">
+<div style="display:flex;align-items:center;gap:40px">
+<img src="assets/vuk-logo-white.svg" alt="VUK objekt" style="height:30px;display:block">
+<nav style="display:flex;gap:24px"><a href="#" style="color:#C9C3C6">Výrobky</a><a href="#" style="color:#C9C3C6">Jak objednat</a><a href="#" style="color:#C9C3C6">Časté dotazy</a><a href="#" style="color:#C9C3C6">O nás</a><a href="#" style="color:#C9C3C6">Kontakt</a></nav>
+</div>
+<div style="display:flex;gap:24px;align-items:center"><span>Domažlická 1123/194, 318 00 Plzeň · +420 603 168 843 · vuk@vuk.cz</span><span style="color:#8D8589">© VUK objekt s.r.o.</span></div>
+</div>
+</footer>
+</div>
+</div>
+
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroVariant&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;split&quot;,&quot;fullbleed&quot;],&quot;default&quot;:&quot;split&quot;,&quot;tsType&quot;:&quot;'split'|'fullbleed'&quot;,&quot;section&quot;:&quot;Úvod&quot;},&quot;showFacts&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Úvod&quot;},&quot;productHero&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;split&quot;,&quot;fullbleed&quot;],&quot;default&quot;:&quot;fullbleed&quot;,&quot;tsType&quot;:&quot;'split'|'fullbleed'&quot;,&quot;section&quot;:&quot;Výrobek&quot;},&quot;stickyBar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Mobil&quot;}}">
+class Component extends DCLogic {
+  state = { menuOpen: false };
+  renderVals() {
+    const products = [
+      { name: 'Historická dlažba', ico: 'icons/historicka-dlazba-brand.svg', icoW: 'icons/historicka-dlazba-white.svg', line: 'Tradiční vzory pro divadla, radnice, kavárny i měšťanské domy.', img: 'img/09.jpg' },
+      { name: 'Obklady a tvarovky', ico: 'icons/obklady-tvarovky-brand.svg', icoW: 'icons/obklady-tvarovky-white.svg', line: 'Věrné repliky historických obkladů i prvky pro nové stavby.', img: 'img/29.jpg' },
+      { name: 'Exteriérová keramika', ico: 'icons/exterierova-keramika-brand.svg', icoW: 'icons/exterierova-keramika-white.svg', line: 'Mrazuvzdorné fasádní obklady, parapety, římsy a balustrády.', img: 'img/05.jpg' },
+      { name: 'Technická keramika', ico: 'icons/technicka-keramika-brand.svg', icoW: 'icons/technicka-keramika-white.svg', line: 'Žárovzdorné tvarovky pro sklářství, metalurgii a průmysl.', img: 'img/L3584.jpg' },
+      { name: 'Speciální výroba', ico: 'icons/specialni-vyroba-brand.svg', icoW: 'icons/specialni-vyroba-white.svg', line: 'Architektonické prvky a umělecká díla na míru.', img: 'img/45.jpg' },
+      { name: 'Kachle a vytápění', ico: 'icons/kachle-vytapeni-brand.svg', icoW: 'icons/kachle-vytapeni-white.svg', line: 'Kachle pro tradiční i moderní kamna a repliky historických.', img: 'img/L3621.jpg' },
+    ];
+    const hero = this.props.heroVariant ?? 'split';
+    return {
+      products,
+      otherProducts: products.slice(1),
+      productTabs: products.map((p, i) => ({ name: p.name, ico: i === 0 ? p.icoW : p.ico, bg: i === 0 ? '#AE4A84' : 'transparent', color: i === 0 ? '#fff' : '#2E2A2C', icon: i === 0 ? '#fff' : '#AE4A84' })),
+      pSplit: (this.props.productHero ?? 'fullbleed') === 'split',
+      pFull: (this.props.productHero ?? 'fullbleed') === 'fullbleed',
+      heroSplit: hero === 'split',
+      heroFull: hero === 'fullbleed',
+      showFacts: this.props.showFacts ?? true,
+      stickyBar: this.props.stickyBar ?? true,
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState(s => ({ menuOpen: !s.menuOpen })),
+      mnav: ['Výrobky', 'Jak objednat', 'Časté dotazy', 'O nás', 'Kontakt'],
+      facts: [
+        { big: '25+ let', small: 'v oboru stavební a žárovzdorné keramiky' },
+        { big: 'Od 1 kusu', small: 'po rozsáhlé projekty a celé podlahy' },
+        { big: 'Vzorek', small: 'ke schválení před zahájením výroby' },
+        { big: 'Mrazuvzdorné', small: 'výrobky se stavebně technickým osvědčením' },
+      ],
+      steps: [
+        { n: '01', t: 'Kontakt a konzultace', d: 'Ozvěte se nám telefonicky nebo e-mailem s popisem vašeho projektu.' },
+        { n: '02', t: 'Osobní návštěva', d: 'Prohlédneme si keramiku, která má být nahrazena nebo doplněna, a vyzvedneme vzorky.' },
+        { n: '03', t: 'Dodání předlohy', d: 'Původní kus, střepy, fotografie nebo technická dokumentace.' },
+        { n: '04', t: 'Materiálový vzorek ke schválení', d: 'Před zahájením samotné výroby vám vyrobíme materiálový vzorek.' },
+        { n: '05', t: 'Výroba', d: 'Po schválení vzorku přistoupíme k výrobě vašeho projektu.' },
+        { n: '06', t: 'Dodání', d: 'Hotové výrobky vám dodáme ve sjednaném termínu.' },
+      ],
+      refs: [
+        { name: 'Hlavní nádraží, Praha', what: 'obklady' },
+        { name: 'Velká synagoga, Plzeň', what: 'dlažba' },
+        { name: 'Café Imperial, Praha', what: 'dlažba' },
+        { name: 'Obecní dům, Praha', what: 'dlažba' },
+        { name: 'Zámek Kratochvíle', what: 'dlažba' },
+        { name: 'Nemocnice, Ósaka', what: 'keramické plastiky' },
+      ],
+      refsShort: [{ name: 'Hlavní nádraží, Praha' }, { name: 'Velká synagoga, Plzeň' }, { name: 'Café Imperial, Praha' }, { name: 'Nemocnice, Ósaka' }],
+      dlazbaBlocks: [
+        { t: 'Zakázková výroba na míru', d: 'Každý historický objekt je jedinečný a vyžaduje individuální přístup. Pracujeme s architekty, restaurátory a majiteli historických nemovitostí na obnově původních dlažeb nebo vytvoření nových podlah v historickém duchu.' },
+        { t: 'Barevné sladění s originálem', d: 'Při výrobě používáme hmoty vlastní výroby, které jsme schopni probarvit podle odstínu dodaného vzorku tak, aby nové dlaždice bylo možno kombinovat se zachovalými částmi dlažby v domě.' },
+        { t: 'Repliky i lokální opravy', d: 'Specializujeme se na výrobu jak kompletních dlažeb pro velké plochy, tak jednotlivých kusů pro lokální opravy. Vyrobíme repliky, které dokonale zapadnou do původního vzoru.' },
+      ],
+      dlazbaList: ['Geometrické vzory a mozaiky', 'Jednobarevné a vícebarevné dlaždice', 'Dlaždice s reliéfními vzory a dekoracemi', 'Rohové a okrajové prvky pro kompletní řešení podlahy'],
+      dlazbaRefs: [
+        { name: 'Velká synagoga', city: 'Plzeň' }, { name: 'Café Imperial', city: 'Praha' },
+        { name: 'Obecní dům', city: 'Praha' }, { name: 'Budova radnice', city: 'Pardubice' },
+        { name: 'Česká spořitelna Rytířská', city: 'Praha' }, { name: 'Zámek Kratochvíle', city: 'Netolice' },
+        { name: 'Zemské hejtmanství', city: 'Brno' }, { name: 'Ekologické muzeum', city: 'Praha-Bubeneč' },
+      ],
+      faqs: [
+        { q: 'Může se dlažba od nás „prošlapat“?', a: 'Barevná nášlapná vrstva je navržena tak, aby dlouhodobě odolávala intenzivnímu provozu i vysokému mechanickému zatížení. Odolnost máme technicky ověřenou ve zkušebním ústavu, a to i pro chodby, kostely, nádraží nebo veřejné budovy.' },
+        { q: 'Je vhodná námi vyrobená dlažba do exteriéru?', a: 'Ano, naše výrobky mají STO (stavebně technické osvědčení) a další certifikáty (mrazuvzdornost, otěruvzdornost na barevně probarvené vrstvy).' },
+        { q: 'Potřebuji dodat vzorek pro vytvoření repliky?', a: 'Ano, nejlepší je dodat původní vzorek. Často postačí i malý segment nebo střep původního prvku. Pokud to není možné, dokážeme kus vytvořit také podle fotografie nebo dostupné dokumentace.' },
+        { q: 'Vyrábíte i jednotlivé kusy?', a: 'Vyrábíme od jednoho kusu po rozsáhlé projekty.' },
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<a href="{{ p.url }}" class="card">
+  <div class="card__media">
+    <img src="{{ p.data.img }}" alt="{{ p.data.name }}" loading="lazy">
+    <span class="card__icon">{% include "icons/" + p.data.icon + ".svg" %}</span>
+  </div>
+  <div class="card__body">
+    <div class="card__head">
+      <span class="card__name">{{ p.data.name }}</span>
+      <span class="card__arrow" aria-hidden="true">→</span>
+    </div>
+    <p class="card__line">{{ p.data.line }}</p>
+  </div>
+</a>

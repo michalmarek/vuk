@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "vyrobky": "Produkte",
+    "jakObjednat": "So bestellen",
+    "casteDotazy": "Häufige Fragen",
+    "oNas": "Über uns",
+    "kontakt": "Kontakt"
+  },
+  "zavolejte": "Rufen Sie an:",
+  "napisteNam": "Schreiben Sie uns",
+  "menu": "Menü",
+  "zavolat": "Anrufen",
+  "napsatEmail": "E-Mail schreiben",
+  "coVyrabimeNadtitulek": "6 Produktbereiche",
+  "coVyrabime": "Was wir herstellen",
+  "coVyrabimePerex": "Jedes Produkt fertigen wir von Hand, auf Bestellung und mit unbegrenzter Farb- und Formpalette.",
+  "ctaNadpis": "Haben Sie eine Frage oder möchten Sie bestellen?",
+  "ctaPerex": "Rufen Sie an oder schreiben Sie uns mit einer Beschreibung Ihres Projekts. Wir kommen gern vorbei und sehen uns die Keramik an, die ersetzt oder ergänzt werden soll.",
+  "copyright": "© VUK objekt s.r.o.",
+  "fakta": [
+    { "big": "25+ Jahre", "small": "Erfahrung in Bau- und Feuerfestkeramik" },
+    { "big": "Ab 1 Stück", "small": "bis zu umfangreichen Projekten und ganzen Böden" },
+    { "big": "Muster", "small": "zur Freigabe vor Produktionsbeginn" },
+    { "big": "Frostbeständig", "small": "Produkte mit bautechnischem Zertifikat" }
+  ]
+}

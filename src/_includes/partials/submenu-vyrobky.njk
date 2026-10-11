@@ -1,0 +1,11 @@
+{%- set vyrobky = collections.vyrobek | byLang(lang) %}
+<div class="submenu">
+  <div class="container submenu__inner">
+    {%- for p in vyrobky %}
+    <a href="{{ p.url }}" class="submenu__item{{ ' is-active' if p.data.translationKey == activeVyrobek }}">
+      <span class="submenu__icon">{% include "icons/" + p.data.icon + ".svg" %}</span>
+      <span class="submenu__name">{{ p.data.name }}</span>
+    </a>
+    {%- endfor %}
+  </div>
+</div>

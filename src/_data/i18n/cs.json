@@ -1,0 +1,26 @@
+{
+  "nav": {
+    "vyrobky": "Výrobky",
+    "jakObjednat": "Jak objednat",
+    "casteDotazy": "Časté dotazy",
+    "oNas": "O nás",
+    "kontakt": "Kontakt"
+  },
+  "zavolejte": "Zavolejte:",
+  "napisteNam": "Napište nám",
+  "menu": "Menu",
+  "zavolat": "Zavolat",
+  "napsatEmail": "Napsat e-mail",
+  "coVyrabimeNadtitulek": "6 oborů výroby",
+  "coVyrabime": "Co vyrábíme",
+  "coVyrabimePerex": "Každý výrobek děláme ručně, na zakázku a s neomezenou paletou barev a tvarů.",
+  "ctaNadpis": "Máte dotaz, chcete objednat?",
+  "ctaPerex": "Zavolejte nebo napište s popisem projektu. Rádi přijedeme na místo a prohlédneme si keramiku, která má být nahrazena nebo doplněna.",
+  "copyright": "© VUK objekt s.r.o.",
+  "fakta": [
+    { "big": "25+ let", "small": "v oboru stavební a žárovzdorné keramiky" },
+    { "big": "Od 1 kusu", "small": "po rozsáhlé projekty a celé podlahy" },
+    { "big": "Vzorek", "small": "ke schválení před zahájením výroby" },
+    { "big": "Mrazuvzdorné", "small": "výrobky se stavebně technickým osvědčením" }
+  ]
+}

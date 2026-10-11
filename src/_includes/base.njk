@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }} — VUK objekt</title>
+  {%- if description %}
+  <meta name="description" content="{{ description }}">
+  {%- endif %}
+  <link rel="preload" href="/assets/fonts/zilla-slab-latin-ext-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="/assets/js/menu.js" defer></script>
+  {%- set alts = collections.all | translations(translationKey) %}
+  {%- for a in alts %}
+  <link rel="alternate" hreflang="{{ a.lang }}" href="{{ a.url }}">
+  {%- endfor %}
+</head>
+<body{{ ' class="has-sticky-bar"' if stickyBar else '' }}>
+  {% include "partials/header.njk" %}
+  <main>{{ content | safe }}</main>
+  {% include "partials/footer.njk" %}
+  {%- if stickyBar %}
+  {% include "partials/sticky-bar.njk" %}
+  {%- endif %}
+</body>
+</html>
