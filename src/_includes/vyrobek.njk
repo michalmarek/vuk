@@ -6,17 +6,20 @@ activeNav: vyrobky
 {%- set activeVyrobek = translationKey %}
 {%- set vyrobkyHref = "/vyrobky/" if lang == "cs" else "/" + lang + "/produkte/" %}
 {%- set galerie = reference | proVyrobek(translationKey) %}
+<div class="submenu-sentinel" aria-hidden="true"></div>
 {% include "partials/submenu-vyrobky.njk" %}
 
 {# ---------- Hero (fullbleed) ---------- #}
 <section class="phero" style="background-image:linear-gradient(rgba(46,42,44,.45),rgba(46,42,44,.55)),url('{{ heroFoto or img }}')">
   <div class="container phero__inner">
     <p class="phero__crumb"><a href="{{ vyrobkyHref }}">{{ t.nav.vyrobky }}</a> / {{ name }}</p>
-    <h1 class="phero__title">{{ name }}</h1>
-    {%- if podtitulek %}<p class="phero__subtitle">{{ podtitulek }}</p>{%- endif %}
-    <div class="btn-row">
-      <a href="tel:{{ site.telefonRaw }}" class="btn btn--primary">{{ t.zavolejte }} {{ site.telefon }}</a>
-      <a href="mailto:{{ site.email }}" class="btn btn--ghost btn--ghost-light">{{ t.napisteNam }}</a>
+    <div class="phero__body">
+      <h1 class="phero__title">{{ name }}</h1>
+      {%- if podtitulek %}<p class="phero__subtitle">{{ podtitulek }}</p>{%- endif %}
+      <div class="btn-row">
+        <a href="tel:{{ site.telefonRaw }}" class="btn btn--primary">{{ t.zavolejte }} {{ site.telefon }}</a>
+        <a href="mailto:{{ site.email }}" class="btn btn--ghost btn--ghost-light">{{ t.napisteNam }}</a>
+      </div>
     </div>
   </div>
 </section>
