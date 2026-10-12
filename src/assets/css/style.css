@@ -80,7 +80,7 @@ h1, h2, h3 { font-family: var(--serif); margin: 0; }
 /* ============================================================
    Hlavička
    ============================================================ */
-.site-header { border-bottom: 1px solid var(--line); background: #fff; }
+.site-header { border-bottom: 1px solid var(--line); background: #fff; position: sticky; top: 0; z-index: 20; }
 .site-header__inner {
   height: 92px; display: flex; align-items: center;
   justify-content: space-between; gap: 40px;
@@ -237,9 +237,11 @@ h1, h2, h3 { font-family: var(--serif); margin: 0; }
    Responzivita
    ============================================================ */
 @media (max-width: 960px) {
-  /* Hlavička → mobilní režim */
-  .site-header { position: sticky; top: 0; z-index: 20; }
+  /* Hlavička → mobilní režim (sticky má už v základu) */
   .site-header__inner { height: 64px; position: relative; }
+
+  /* Submenu výrobků zatím na mobilu skryté (dořešíme s obsahem produktu) */
+  .submenu { display: none; }
   .site-header__logo img { height: 34px; }
   .site-nav, .site-header__right { display: none; }
 
@@ -260,11 +262,27 @@ h1, h2, h3 { font-family: var(--serif); margin: 0; }
     flex-direction: column;
   }
   .site-header[data-menu-open] .mobile-menu { display: flex; }
+  /* Ostatní odkazy (Jak objednat, …) — o něco menší */
   .mobile-menu__link {
-    color: var(--ink); font-family: var(--serif); font-weight: 700; font-size: 24px;
-    padding: 16px 0; border-bottom: 1px solid var(--line-3);
+    color: var(--ink); font-family: var(--serif); font-weight: 700; font-size: 19px;
+    padding: 14px 0; border-bottom: 1px solid var(--line-3);
   }
   .mobile-menu__link:hover { color: var(--brand); }
+
+  /* Výrobky — ikona v bílé dlaždici se stínem (jako karty na HP), bez dělicí čáry */
+  .mobile-menu__products {
+    display: flex; flex-direction: column; gap: 4px;
+    padding-bottom: 8px; margin-bottom: 22px;
+  }
+  .mobile-menu__product { display: flex; align-items: center; gap: 16px; padding: 6px 0; color: var(--ink); }
+  .mobile-menu__product:hover { color: var(--brand); }
+  .mobile-menu__icon {
+    flex: none; width: 48px; height: 48px; background: #fff; color: var(--brand);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 10px rgba(46,42,44,.12);
+  }
+  .mobile-menu__icon svg { width: 30px; height: 30px; }
+  .mobile-menu__pname { font-family: var(--serif); font-weight: 700; font-size: 24px; }
   .mobile-menu__langs { display: flex; gap: 16px; padding-top: 20px; font-size: 14px; font-weight: 600; }
   .mobile-menu__langs .langs__item.is-active { border-bottom: 2px solid var(--brand); padding-bottom: 2px; }
 

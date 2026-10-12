@@ -38,7 +38,14 @@
   </div>
 
   <nav id="mobile-menu" class="mobile-menu" aria-label="Mobilní navigace" data-menu-panel>
-    <a href="#" class="mobile-menu__link">{{ t.nav.vyrobky }}</a>
+    <div class="mobile-menu__products">
+      {%- for p in collections.vyrobek | byLang(lang) %}
+      <a href="{{ p.url }}" class="mobile-menu__product">
+        <span class="mobile-menu__icon">{% include "icons/" + p.data.icon + ".svg" %}</span>
+        <span class="mobile-menu__pname">{{ p.data.name }}</span>
+      </a>
+      {%- endfor %}
+    </div>
     <a href="#" class="mobile-menu__link">{{ t.nav.jakObjednat }}</a>
     <a href="#" class="mobile-menu__link">{{ t.nav.casteDotazy }}</a>
     <a href="#" class="mobile-menu__link">{{ t.nav.oNas }}</a>
