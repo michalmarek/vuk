@@ -154,8 +154,13 @@ h1, h2, h3 { font-family: var(--serif); margin: 0; }
 .facts { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .facts__grid { padding-top: 40px; padding-bottom: 40px; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 32px; }
 .fact { display: flex; flex-direction: column; gap: 6px; }
-.fact__big { font-family: var(--serif); font-weight: 700; font-size: 34px; line-height: 1; color: var(--brand); }
+.fact__big { font-family: var(--serif); font-weight: 700; font-size: 34px; line-height: 1.05; color: var(--brand); }
 .fact__small { font-size: 15px; line-height: 1.45; color: var(--ink-2); }
+
+/* Pás fotek (O nás) */
+.foto-pas .container { padding-top: 0; padding-bottom: 96px; }
+.foto-pas__grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+.foto-pas__img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
 
 /* ============================================================
    Jak objednat
@@ -273,12 +278,19 @@ img.realizace { object-fit: cover; }
 .pnabidka:not(.pnabidka--foto) .pnabidka__list li { break-inside: avoid; }
 
 /* Postup výroby */
-.ppostup .container { padding-top: 96px; padding-bottom: 96px; }
-.ppostup h2 { font-weight: 700; font-size: 40px; line-height: 1.05; margin: 0 0 40px; }
-.ppostup__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 72px; }
-.ppostup__krok { display: grid; grid-template-columns: 56px minmax(0,1fr); gap: 16px; padding: 20px 0; border-top: 1px solid var(--line-2); }
-.ppostup__n { font-family: var(--serif); font-weight: 700; font-size: 22px; color: var(--brand); }
-.ppostup__t { font-family: var(--serif); font-weight: 700; font-size: 20px; display: block; }
+.ppostup .container {
+  padding-top: 96px; padding-bottom: 96px; display: grid;
+  grid-template-columns: minmax(0,5fr) minmax(0,7fr); gap: 72px; align-items: start;
+}
+.ppostup__intro { position: sticky; top: 170px; display: flex; flex-direction: column; gap: 24px; }
+.ppostup h2 { font-weight: 700; font-size: 40px; line-height: 1.05; margin: 0; }
+.ppostup__intro p { margin: 0; font-size: 17px; line-height: 1.6; color: var(--ink-2); }
+.ppostup__foto { width: 100%; aspect-ratio: 4/3; object-fit: cover; margin-top: 4px; }
+.ppostup__steps { display: flex; flex-direction: column; }
+.ppostup__krok { display: grid; grid-template-columns: 64px minmax(0,1fr); gap: 16px; padding: 24px 0; border-top: 1px solid var(--line-2); }
+.ppostup__krok:first-child { padding-top: 0; border-top: 0; }
+.ppostup__n { font-family: var(--serif); font-weight: 700; font-size: 22px; line-height: 1.2; color: var(--brand); }
+.ppostup__t { font-family: var(--serif); font-weight: 700; font-size: 22px; line-height: 1.2; display: block; }
 .ppostup__d { display: block; margin-top: 6px; font-size: 15px; line-height: 1.55; color: var(--ink-2); }
 
 /* Ukázky realizací */
@@ -325,7 +337,10 @@ img.realizace { object-fit: cover; }
 .kontakt__line strong { color: var(--ink); font-weight: 700; }
 .kontakt__big { font-family: var(--serif); font-weight: 700; font-size: 30px; line-height: 1.2; color: var(--brand); display: block; margin-top: 4px; }
 .kontakt__maplink { display: inline-block; margin-top: 16px; font-size: 16px; font-weight: 600; border-bottom: 1.5px solid var(--brand); padding-bottom: 3px; }
-.kontakt__osoba { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); }
+.kontakt__item + .kontakt__item { margin-top: 24px; }
+.kontakt__jmeno { display: block; margin-top: 4px; font-family: var(--serif); font-weight: 700; font-size: 24px; line-height: 1.2; color: var(--ink); }
+.kontakt__foto { width: 100%; aspect-ratio: 16/10; object-fit: cover; margin-top: 36px; }
+.kontakt__card { background: var(--cream); padding: 44px; }
 
 /* Stránka Časté dotazy */
 .faq-page .container { padding-top: 72px; padding-bottom: 104px; }
@@ -386,7 +401,7 @@ img.realizace { object-fit: cover; }
 /* Zmenšená varianta: sticky po odscrollování, nebo trvale na obecných podstránkách */
 .submenu.is-stuck { box-shadow: 0 6px 16px rgba(46,42,44,.1); }
 .submenu.is-stuck .submenu__item,
-.submenu--compact .submenu__item { min-height: 54px; padding: 8px 14px; font-size: 15px; }
+.submenu--compact .submenu__item { min-height: 54px; padding: 8px 14px; }
 .submenu.is-stuck .submenu__icon, .submenu.is-stuck .submenu__icon svg,
 .submenu--compact .submenu__icon, .submenu--compact .submenu__icon svg { width: 30px; height: 30px; }
 
@@ -443,20 +458,23 @@ img.realizace { object-fit: cover; }
   }
   .mobile-menu__link:hover { color: var(--brand); }
 
-  /* Výrobky — ikona v bílé dlaždici se stínem (jako karty na HP), bez dělicí čáry */
+  /* Výrobky — dlaždice 3 vedle sebe: ikona nahoře, název pod ní */
   .mobile-menu__products {
-    display: flex; flex-direction: column; gap: 4px;
-    padding-bottom: 8px; margin-bottom: 22px;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px;
+    padding-bottom: 8px; margin-bottom: 20px;
   }
-  .mobile-menu__product { display: flex; align-items: center; gap: 16px; padding: 6px 0; color: var(--ink); }
-  .mobile-menu__product:hover { color: var(--brand); }
+  .mobile-menu__product {
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+    text-align: center; gap: 10px; padding: 16px 4px; color: var(--ink);
+    background: var(--cream); border: 1px solid var(--line);
+  }
+  .mobile-menu__product:hover { color: var(--brand); border-color: var(--brand); }
   .mobile-menu__icon {
-    flex: none; width: 48px; height: 48px; background: #fff; color: var(--brand);
+    flex: none; width: 44px; height: 44px; color: var(--brand);
     display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 2px 10px rgba(46,42,44,.12);
   }
-  .mobile-menu__icon svg { width: 30px; height: 30px; }
-  .mobile-menu__pname { font-family: var(--serif); font-weight: 700; font-size: 24px; }
+  .mobile-menu__icon svg { width: 38px; height: 38px; }
+  .mobile-menu__pname { font-family: var(--serif); font-weight: 700; font-size: 17px; line-height: 1.2; }
   .mobile-menu__langs { display: flex; gap: 16px; padding-top: 20px; font-size: 14px; font-weight: 600; }
   .mobile-menu__langs .langs__item.is-active { border-bottom: 2px solid var(--brand); padding-bottom: 2px; }
 
@@ -489,8 +507,9 @@ img.realizace { object-fit: cover; }
   .pnabidka__foto:nth-child(2) { margin-top: 0; }
   .pnabidka:not(.pnabidka--foto) .pnabidka__list { columns: 1; }
   .pnabidka__text h2, .ppostup h2, .pfaq__list h2, .pgalerie__nadpis { font-size: 30px; }
-  .ppostup .container { padding-top: 56px; padding-bottom: 56px; }
-  .ppostup__grid { grid-template-columns: 1fr; gap: 0; }
+  .ppostup .container { grid-template-columns: 1fr; gap: 32px; padding-top: 56px; padding-bottom: 56px; }
+  .ppostup__intro { position: static; }
+  .ppostup__foto { aspect-ratio: 16/10; }
   .pgalerie .container { padding-top: 56px; padding-bottom: 56px; }
   .pgalerie__grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .pfaq .container { grid-template-columns: 1fr; gap: 32px; padding-bottom: 56px; }
@@ -499,6 +518,9 @@ img.realizace { object-fit: cover; }
   .faq-item__body { padding-right: 24px; }
   .info2 .container { grid-template-columns: 1fr; gap: 28px; padding-top: 40px; padding-bottom: 48px; }
   .kontakt .container { grid-template-columns: 1fr; gap: 40px; padding-bottom: 64px; }
+  .kontakt__card { padding: 32px; }
+  .foto-pas .container { padding-bottom: 56px; }
+  .foto-pas__grid { grid-template-columns: 1fr; gap: 12px; }
   .page-head__lead { font-size: 20px; }
 
   /* Jak objednat / Reference / O nás → pod sebe */

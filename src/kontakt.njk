@@ -16,24 +16,28 @@ perex: "Zavolejte nebo napište s popisem projektu. Rádi přijedeme na místo a
 </div></section>
 
 <section class="kontakt"><div class="container">
-  <div class="kontakt__col">
+  <div class="kontakt__col kontakt__main">
+    <h2>Spojte se s námi</h2>
+    <div class="kontakt__item">
+      <span class="kontakt__line">Kontaktní osoba</span>
+      <span class="kontakt__jmeno">{{ site.kontaktOsoba.jmeno }}</span>
+    </div>
+    <div class="kontakt__item">
+      <span class="kontakt__line">Telefon</span>
+      <a class="kontakt__big" href="tel:{{ site.telefonRaw }}">{{ site.telefon }}</a>
+    </div>
+    <div class="kontakt__item">
+      <span class="kontakt__line">E-mail</span>
+      <a class="kontakt__big" href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </div>
+    <img class="kontakt__foto" src="/assets/img/L3584.jpg" alt="Naše keramická dílna v Plzni" loading="lazy">
+  </div>
+  <aside class="kontakt__col kontakt__card">
     <h2>Kde nás najdete</h2>
     <span class="kontakt__line"><strong>{{ site.nazev }}</strong></span>
     <span class="kontakt__line">{{ site.adresa.ulice }}</span>
     <span class="kontakt__line">{{ site.adresa.mesto }}</span>
     <span class="kontakt__line">IČO: {{ site.ico }}</span>
     <a class="kontakt__maplink" href="{{ site.mapaUrl }}" target="_blank" rel="noopener">Zobrazit na mapě →</a>
-  </div>
-  <div class="kontakt__col">
-    <h2>Spojte se s námi</h2>
-    <span class="kontakt__line">Telefon</span>
-    <a class="kontakt__big" href="tel:{{ site.telefonRaw }}">{{ site.telefon }}</a>
-    <span class="kontakt__line" style="margin-top:14px">E-mail</span>
-    <a class="kontakt__big" href="mailto:{{ site.email }}">{{ site.email }}</a>
-    <div class="kontakt__osoba">
-      <span class="kontakt__line"><strong>Kontaktní osoba</strong></span>
-      <span class="kontakt__line">{{ site.kontaktOsoba.jmeno }}</span>
-      <a class="kontakt__big" href="tel:{{ site.kontaktOsoba.telefonRaw }}">{{ site.kontaktOsoba.telefon }}</a>
-    </div>
-  </div>
+  </aside>
 </div></section>

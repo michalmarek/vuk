@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495.39 495.39" fill="none" stroke="currentColor" stroke-width="20" stroke-linejoin="round" stroke-linecap="round">
+  <!-- obvod zdiva -->
+  <rect x="42" y="42" width="411" height="411" rx="22"/>
+  <!-- ložné spáry (řady cihel) -->
+  <path d="M42,178 H453"/>
+  <path d="M42,317 H453"/>
+  <!-- styčné spáry, převázané na vazbu -->
+  <path d="M247.7,42 V178"/>
+  <path d="M144.9,178 V317"/>
+  <path d="M350.5,178 V317"/>
+  <path d="M247.7,317 V453"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495.39 495.4" fill="none" stroke="currentColor" stroke-width="20" stroke-linejoin="round" stroke-linecap="round">
+  <!-- těleso kamen s klenutým vrškem -->
+  <path d="M82,432 V156 Q82,74 247.7,74 Q413.4,74 413.4,156 V432 Z"/>
+  <!-- nožky -->
+  <path d="M120,432 V466"/>
+  <path d="M375.4,432 V466"/>
+  <!-- obloukové topeniště -->
+  <path d="M168,366 V262 Q168,196 247.7,196 Q327.4,196 327.4,262 V366 Z"/>
+  <!-- plamen -->
+  <path d="M247.7,342 C219,320 226,290 240,268 C244,286 257,284 255,264 C278,288 276,322 247.7,342 Z"/>
+</svg>

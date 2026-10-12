@@ -2,6 +2,8 @@
 layout: base.njk
 ---
 {%- set t = i18n[lang] %}
+{%- set jakHref = "/jak-objednat/" if lang == "cs" else "/" + lang + "/so-bestellen/" %}
+{%- set oNasHref = "/o-nas/" if lang == "cs" else "/" + lang + "/ueber-uns/" %}
 
 <section class="hero">
   <div class="container hero__inner">
@@ -63,7 +65,7 @@ layout: base.njk
         </div>
       </div>
       {%- endfor %}
-      <a href="#" class="inline-link">{{ t.celyPostup }}</a>
+      <a href="{{ jakHref }}" class="inline-link">{{ t.celyPostup }}</a>
     </div>
   </div>
 </section>
@@ -99,7 +101,7 @@ layout: base.njk
       <h2>{{ oNasNadpis }}</h2>
       <p>{{ oNasP1 }}</p>
       <p>{{ oNasP2 }}</p>
-      <a href="#" class="inline-link">{{ t.viceODilne }}</a>
+      <a href="{{ oNasHref }}" class="inline-link">{{ t.viceODilne }}</a>
     </div>
   </div>
 </section>

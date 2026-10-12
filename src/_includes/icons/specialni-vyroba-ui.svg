@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495.39 495.4" fill="none" stroke="currentColor" stroke-width="20" stroke-linejoin="round" stroke-linecap="round">
+  <!-- kresba zvětšená na optickou velikost ostatních ikon; síla linky kompenzována (20/1.18) -->
+  <g transform="translate(-44.59 -69.13) scale(1.18)" stroke-width="16.95">
+    <!-- tělo vázy -->
+    <path d="M207,154
+             L212,182
+             C152,198 124,242 134,286
+             C142,330 182,350 217,372
+             L217,398
+             C200,404 184,422 184,446
+             L311.4,446
+             C311.4,422 295.4,404 278.4,398
+             L278.4,372
+             C313.4,350 353.4,330 361.4,286
+             C371.4,242 343.4,198 283.4,182
+             L288.4,154 Z"/>
+    <!-- ucha -->
+    <path d="M210,180 C158,172 120,204 136,252"/>
+    <path d="M285.4,180 C337.4,172 375.4,204 359.4,252"/>
+    <!-- kanelury (vnitřní linky) -->
+    <path d="M247.7,214 V380"/>
+    <path d="M211,224 C203,280 206,336 220,376"/>
+    <path d="M284.4,224 C292.4,280 289.4,336 275.4,376"/>
+    <!-- poklice -->
+    <path d="M200,154 Q247.7,120 295.4,154"/>
+    <!-- knoflík -->
+    <circle cx="247.7" cy="104" r="13" fill="currentColor" stroke="none"/>
+  </g>
+</svg>

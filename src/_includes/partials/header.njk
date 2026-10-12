@@ -6,6 +6,7 @@
 {%- set kontaktHref = "/kontakt/" if lang == "cs" else "/" + lang + "/kontakt/" %}
 {%- set t = i18n[lang] %}
 {%- set alts = collections.all | translations(translationKey) %}
+{%- set uiIcons = ["historicka-dlazba", "obklady-tvarovky", "exterierova-keramika", "technicka-keramika", "specialni-vyroba", "kachle-vytapeni"] %}
 <header class="site-header" data-header>
   <div class="container site-header__inner">
     <a href="{{ homeHref }}" class="site-header__logo" aria-label="VUK objekt">
@@ -45,8 +46,9 @@
   <nav id="mobile-menu" class="mobile-menu" aria-label="Mobilní navigace" data-menu-panel>
     <div class="mobile-menu__products">
       {%- for p in collections.vyrobek | byLang(lang) %}
+      {%- set iconFile = (p.data.icon + "-ui") if p.data.icon in uiIcons else p.data.icon %}
       <a href="{{ p.url }}" class="mobile-menu__product">
-        <span class="mobile-menu__icon">{% include "icons/" + p.data.icon + ".svg" %}</span>
+        <span class="mobile-menu__icon">{% include "icons/" + iconFile + ".svg" %}</span>
         <span class="mobile-menu__pname">{{ p.data.name }}</span>
       </a>
       {%- endfor %}

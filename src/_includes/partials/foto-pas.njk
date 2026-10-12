@@ -1,0 +1,8 @@
+{#- Pás fotek přes tři sloupce. Očekává: fotky = [{ src, alt }] -#}
+<section class="foto-pas"><div class="container">
+  <div class="foto-pas__grid">
+    {%- for f in fotky %}
+    <img class="foto-pas__img" src="{{ f.src }}" alt="{{ f.alt }}" loading="lazy">
+    {%- endfor %}
+  </div>
+</div></section>

@@ -1,8 +1,12 @@
-{#- Číslovaný postup. Očekává: postup = { nadpis?, kroky: [{ nazev, popis }] } -#}
+{#- Číslovaný postup. Očekává: postup = { nadpis?, perex?, foto?, fotoAlt?, kroky: [{ nazev, popis }] } -#}
 <section class="ppostup">
   <div class="container">
-    {%- if postup.nadpis %}<h2>{{ postup.nadpis }}</h2>{%- endif %}
-    <div class="ppostup__grid">
+    <div class="ppostup__intro">
+      {%- if postup.nadpis %}<h2>{{ postup.nadpis }}</h2>{%- endif %}
+      {%- if postup.perex %}<p>{{ postup.perex }}</p>{%- endif %}
+      {%- if postup.foto %}<img class="ppostup__foto" src="{{ postup.foto }}" alt="{{ postup.fotoAlt or '' }}" loading="lazy">{%- endif %}
+    </div>
+    <div class="ppostup__steps">
       {%- for k in postup.kroky %}
       <div class="ppostup__krok">
         <span class="ppostup__n">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>

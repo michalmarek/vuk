@@ -30,6 +30,8 @@ nabidka:
     - "Repliky historických prvků i originální výroba pro novostavby"
 postup:
   nadpis: "Jak probíhá výroba"
+  foto: "/assets/img/21.jpg"
+  fotoAlt: "Míchání pigmentů pro glazury"
   kroky:
     - nazev: "Analýza vzorku"
       popis: "Prozkoumáme dodaný originál nebo vzorek a vyhodnotíme jeho tvar, rozměry, materiál i povrchovou úpravu."

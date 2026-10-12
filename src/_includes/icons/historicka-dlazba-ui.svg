@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495.39 495.39" fill="none" stroke="currentColor" stroke-width="20" stroke-linejoin="round" stroke-linecap="round">
+  <!-- osmiúhelníkový rám dlaždice -->
+  <path d="M462,336.5 L336.5,462 L158.9,462 L33.4,336.5 L33.4,158.9 L158.9,33.4 L336.5,33.4 L462,158.9 Z"/>
+  <!-- centrální medailon -->
+  <circle cx="247.7" cy="247.7" r="104"/>
+  <!-- čtyři listy na stranách (sever, východ, jih, západ) -->
+  <path d="M247.7,52 Q278,95 247.7,138 Q217.4,95 247.7,52 Z"/>
+  <path d="M247.7,52 Q278,95 247.7,138 Q217.4,95 247.7,52 Z" transform="rotate(90 247.7 247.7)"/>
+  <path d="M247.7,52 Q278,95 247.7,138 Q217.4,95 247.7,52 Z" transform="rotate(180 247.7 247.7)"/>
+  <path d="M247.7,52 Q278,95 247.7,138 Q217.4,95 247.7,52 Z" transform="rotate(270 247.7 247.7)"/>
+  <!-- čtyři rohové tečky -->
+  <g fill="currentColor" stroke="none">
+    <circle cx="371.4" cy="371.4" r="15"/>
+    <circle cx="124" cy="371.4" r="15"/>
+    <circle cx="124" cy="124" r="15"/>
+    <circle cx="371.4" cy="124" r="15"/>
+  </g>
+</svg>

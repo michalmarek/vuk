@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 495.39 495.4" fill="none" stroke="currentColor" stroke-width="20" stroke-linejoin="round" stroke-linecap="round">
+  <!-- obrys původního tělesa (kříž: svislé těleso + vodorovná hřídel) -->
+  <path d="M118,22
+           L377,22 L377,191
+           L481,191 L481,304
+           L377,304 L377,474
+           L118,474 L118,304
+           L14,304 L14,191
+           L118,191 Z"/>
+  <!-- středový kruh -->
+  <circle cx="247.7" cy="247.7" r="85"/>
+  <!-- vodorovná osa -->
+  <path d="M14,247.7 H481"/>
+</svg>

@@ -7,6 +7,22 @@ title: "O nás"
 lead: "Tvoříme keramiku, která vydrží generace."
 perex: "Více než 25 let vytváříme keramiku, která spojuje tradiční řemeslnou kvalitu s individuálními potřebami každého projektu."
 foto: "/assets/img/61.jpg"
+fakta:
+  - big: "25+ let"
+    small: "zkušeností v oboru stavební a žárovzdorné keramiky"
+  - big: "10 lidí"
+    small: "zkušený tým řemeslníků a techniků"
+  - big: "Od 1 kusu"
+    small: "po rozsáhlé rekonstrukce a celé podlahy"
+  - big: "Praha–Ósaka"
+    small: "realizace v historických i nových stavbách po světě"
+fotky:
+  - src: "/assets/img/09.jpg"
+    alt: "Ruční dekorování keramického prvku"
+  - src: "/assets/img/37.jpg"
+    alt: "Formy připravené k odlévání výrobků"
+  - src: "/assets/img/L3621.jpg"
+    alt: "Glazované keramické tvarovky z naší dílny"
 ---
 {%- set t = i18n[lang] %}
 <div class="submenu-sentinel" aria-hidden="true"></div>
@@ -24,6 +40,17 @@ foto: "/assets/img/61.jpg"
     <p>Jsme zakázková keramická dílna specializující se na výrobu keramických prvků pro exteriéry i interiéry budov. Naše produkty naleznete v historických objektech i v nových stavbách po celém světě – od obkladů hlavního nádraží v Praze až po plastiky pro nemocnici v japonské Ósace.</p>
     <p>Každý výrobek vyrábíme ručně s neomezenou paletou barev a tvarů, což nám umožňuje realizovat jak zcela nové projekty, tak repliky pro lokální opravy historických objektů.</p>
   </div>
+</div></section>
+
+{% include "partials/foto-pas.njk" %}
+
+<section class="facts"><div class="container facts__grid">
+  {%- for f in fakta %}
+  <div class="fact">
+    <span class="fact__big">{{ f.big }}</span>
+    <span class="fact__small">{{ f.small }}</span>
+  </div>
+  {%- endfor %}
 </div></section>
 
 <section class="info2"><div class="container">
