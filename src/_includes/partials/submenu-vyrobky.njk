@@ -1,5 +1,5 @@
 {%- set vyrobky = collections.vyrobek | byLang(lang) %}
-<div class="submenu">
+<div class="submenu{{ ' submenu--compact' if submenuCompact }}">
   <div class="container submenu__inner">
     {%- for p in vyrobky %}
     <a href="{{ p.url }}" class="submenu__item{{ ' is-active' if p.data.translationKey == activeVyrobek }}">

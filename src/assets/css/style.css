@@ -364,10 +364,12 @@ img.realizace { object-fit: cover; }
 .submenu__item.is-active { background: var(--brand); color: #fff; }
 .submenu__item.is-active .submenu__icon { color: #fff; }
 
-/* Sticky režim: po odscrollování se submenu zmenší */
+/* Zmenšená varianta: sticky po odscrollování, nebo trvale na obecných podstránkách */
 .submenu.is-stuck { box-shadow: 0 6px 16px rgba(46,42,44,.1); }
-.submenu.is-stuck .submenu__item { min-height: 54px; padding: 8px 14px; font-size: 15px; }
-.submenu.is-stuck .submenu__icon, .submenu.is-stuck .submenu__icon svg { width: 30px; height: 30px; }
+.submenu.is-stuck .submenu__item,
+.submenu--compact .submenu__item { min-height: 54px; padding: 8px 14px; font-size: 15px; }
+.submenu.is-stuck .submenu__icon, .submenu.is-stuck .submenu__icon svg,
+.submenu--compact .submenu__icon, .submenu--compact .submenu__icon svg { width: 30px; height: 30px; }
 
 /* Blízko breakpointu: zmenšit, ať se 6 sloupců nerozpadá */
 @media (max-width: 1160px) and (min-width: 961px) {
