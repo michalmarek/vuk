@@ -317,7 +317,7 @@ img.realizace { object-fit: cover; }
 .faq-group:first-of-type { margin-top: 0; }
 .faq-group__title { font-family: var(--serif); font-weight: 700; font-size: 26px; line-height: 1.1; margin: 0 0 4px; color: var(--brand); }
 .faq-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
-.faq-tag { font-size: 12px; font-weight: 600; letter-spacing: .02em; color: var(--brand); border: 1px solid var(--brand); padding: 4px 10px; }
+.faq-tag { font-size: 12px; font-weight: 600; letter-spacing: .02em; color: var(--ink-2); background: var(--line); padding: 4px 12px; border-radius: 999px; }
 
 /* Další výrobky */
 .pdalsi { background: var(--cream); }
