@@ -23,7 +23,7 @@
 
     <div class="site-header__right">
       <div class="contact">
-        <a href="tel:{{ site.telefonRaw }}" class="contact__phone">{{ site.telefon }}</a>
+        <a href="tel:{{ site.telefonRaw }}" class="contact__phone">{{ site.telefon | replace("+420 ", "") }}</a>
         <a href="mailto:{{ site.email }}" class="contact__email">{{ site.email }}</a>
       </div>
       <div class="langs">
