@@ -37,6 +37,31 @@ export default function (eleventyConfig) {
     (items || []).filter((r) => r.vyrobek === key)
   );
 
+  // Název výrobku podle translationKey (pro štítky u FAQ, přeloží se sám)
+  eleventyConfig.addFilter("nazevVyrobku", (items, key) => {
+    const p = (items || []).find((x) => x.data.translationKey === key);
+    return p ? p.data.name : key;
+  });
+
+  // FAQ relevantní k danému výrobku (q.vyrobky obsahuje klíč)
+  eleventyConfig.addFilter("faqProVyrobek", (list, key) =>
+    (list || []).filter((q) => (q.vyrobky || []).includes(key))
+  );
+
+  // Seskup FAQ po kategoriích, pořadí dle prvního výskytu
+  eleventyConfig.addFilter("seskupKategorie", (list) => {
+    const out = [];
+    const idx = {};
+    (list || []).forEach((q) => {
+      if (!(q.kategorie in idx)) {
+        idx[q.kategorie] = out.length;
+        out.push({ kategorie: q.kategorie, items: [] });
+      }
+      out[idx[q.kategorie]].items.push(q);
+    });
+    return out;
+  });
+
   // Omez pole na prvních n položek
   eleventyConfig.addFilter("limit", (arr, n) => (arr || []).slice(0, n));
 

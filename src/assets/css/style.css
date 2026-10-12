@@ -298,7 +298,8 @@ img.realizace { object-fit: cover; }
 .faq-item summary::-webkit-details-marker { display: none; }
 .faq-item__mark { color: var(--brand); font-family: var(--sans); font-weight: 400; transition: transform .15s ease; }
 .faq-item[open] .faq-item__mark { transform: rotate(45deg); }
-.faq-item p { margin: 0; padding: 0 48px 24px 0; font-size: 16px; line-height: 1.65; color: var(--ink-2); }
+.faq-item__body { padding: 0 48px 24px 0; }
+.faq-item__body p { margin: 0; font-size: 16px; line-height: 1.65; color: var(--ink-2); }
 .pkontakt { background: var(--brand); color: #fff; padding: 40px; }
 .pkontakt h3 { font-weight: 700; font-size: 30px; line-height: 1.1; margin: 0 0 14px; }
 .pkontakt > p { margin: 0; font-size: 16px; line-height: 1.55; }
@@ -306,6 +307,17 @@ img.realizace { object-fit: cover; }
 .pkontakt__jmeno { font-size: 15px; font-weight: 700; }
 .pkontakt__tel, .pkontakt__mail { color: #fff; font-family: var(--serif); font-weight: 700; font-size: 28px; line-height: 1.1; }
 .pkontakt__tel:hover, .pkontakt__mail:hover { color: #fff; text-decoration: underline; }
+
+/* Stránka Časté dotazy */
+.faq-page .container { padding-top: 72px; padding-bottom: 104px; }
+.faq-page__head { max-width: 720px; margin-bottom: 48px; }
+.faq-page__perex { margin: 16px 0 0; font-size: 18px; line-height: 1.6; color: var(--ink-2); }
+.faq-page__empty { font-size: 18px; color: var(--ink-2); }
+.faq-group { margin-top: 48px; }
+.faq-group:first-of-type { margin-top: 0; }
+.faq-group__title { font-family: var(--serif); font-weight: 700; font-size: 26px; line-height: 1.1; margin: 0 0 4px; color: var(--brand); }
+.faq-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.faq-tag { font-size: 12px; font-weight: 600; letter-spacing: .02em; color: var(--brand); border: 1px solid var(--brand); padding: 4px 10px; }
 
 /* Další výrobky */
 .pdalsi { background: var(--cream); }
@@ -462,6 +474,8 @@ img.realizace { object-fit: cover; }
   .pgalerie__grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .pfaq .container { grid-template-columns: 1fr; gap: 32px; padding-bottom: 56px; }
   .pdalsi__grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .faq-page .container { padding-top: 48px; padding-bottom: 56px; }
+  .faq-item__body { padding-right: 24px; }
 
   /* Jak objednat / Reference / O nás → pod sebe */
   .order .container, .refs .container, .about .container {

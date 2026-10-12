@@ -51,10 +51,5 @@ postup:
       popis: "U projektů vyžadujících přesné rozměry provádíme po výpalu kalibraci jednotlivých kusů."
     - nazev: "Balení a expedice"
       popis: "Hotové výrobky pečlivě zabalíme a bezpečně odešleme na místo určení."
-faq:
-  - otazka: "Můžete vyrobit obklady podle historické předlohy?"
-    odpoved: "Na výrobu kopií historických obkladů se naše dílna dlouhodobě specializuje."
-  - otazka: "Dokážete napodobit barvu a strukturu starých obkladů?"
-    odpoved: "Díky vlastním recepturám keramických hmot a ručně míchaným glazurám dokážeme věrně napodobit původní barvy, strukturu i charakter historických materiálů."
 ---
 Vyrábíme historické keramické obklady, dlaždice a tvarovky pro rekonstrukce i novostavby. Citlivě doplňujeme chybějící části původních obkladů, ale uplatní se i v moderních interiérech, které těží z nadčasové krásy tradiční keramiky.

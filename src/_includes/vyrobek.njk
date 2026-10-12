@@ -5,7 +5,9 @@ activeNav: vyrobky
 {%- set t = i18n[lang] %}
 {%- set activeVyrobek = translationKey %}
 {%- set vyrobkyHref = "/vyrobky/" if lang == "cs" else "/" + lang + "/produkte/" %}
+{%- set faqHref = "/caste-dotazy/" if lang == "cs" else "/" + lang + "/haeufige-fragen/" %}
 {%- set galerie = reference | proVyrobek(translationKey) %}
+{%- set faqItems = faq[lang] | faqProVyrobek(translationKey) | limit(5) %}
 <div class="submenu-sentinel" aria-hidden="true"></div>
 {% include "partials/submenu-vyrobky.njk" %}
 
@@ -92,16 +94,17 @@ activeNav: vyrobky
 {%- endif %}
 
 {# ---------- FAQ + kontaktní box ---------- #}
-{%- if faq %}
+{%- if faqItems.length %}
 <section class="pfaq"><div class="container">
   <div class="pfaq__list">
     <h2>{{ t.casteDotazyNadpis }}</h2>
-    {%- for q in faq %}
+    {%- for q in faqItems %}
     <details class="faq-item">
       <summary>{{ q.otazka }}<span class="faq-item__mark" aria-hidden="true">+</span></summary>
-      <p>{{ q.odpoved }}</p>
+      <div class="faq-item__body"><p>{{ q.odpoved }}</p></div>
     </details>
     {%- endfor %}
+    <a href="{{ faqHref }}" class="inline-link pfaq__all">{{ t.vsechnyDotazy }}</a>
   </div>
   <aside class="pkontakt">
     <h3>{{ t.ctaNadpis }}</h3>

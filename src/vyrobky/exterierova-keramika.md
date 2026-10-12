@@ -29,8 +29,5 @@ nabidka:
     - "Dekorační prvky fasád"
     - "Repliky tvarovek dle dodaných vzorků"
     - "Atypické tvarovky a koncové prvky dle přání zákazníka"
-faq:
-  - otazka: "Jsou vaše výrobky vhodné do exteriéru?"
-    odpoved: "Ano – exteriérová keramika je mrazuvzdorná, vyrobená z materiálů odpovídajících venkovnímu použití a dlouhodobé odolnosti vůči povětrnostním vlivům."
 ---
 Vyrábíme obklady a tvarové prvky pro renovace fasád moderních i historických staveb. Vnější obklady jsou z mrazuvzdorné keramiky odpovídající účelu použití a každý prvek je vyroben s ohledem na dlouhodobou odolnost vůči povětrnostním vlivům.

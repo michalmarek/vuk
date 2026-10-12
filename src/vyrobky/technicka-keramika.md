@@ -29,8 +29,5 @@ nabidka:
     - "Pálicí pomůcky a pomocné materiály"
     - "Tvarovky pro vyzdívky reaktorů, pecí, kotlů, kamen a krbů"
   poznamka: "Technickou keramiku vyrábíme zakázkově podle požadovaného tvaru, rozměrů a způsobu použití."
-faq:
-  - otazka: "Co je to technická keramika a kde se používá?"
-    odpoved: "Technická keramika zahrnuje žárovzdorné a vysoce odolné keramické materiály pro průmysl. Odolává vysokým teplotám, chemickému namáhání i opotřebení a používá se například ve sklářství, metalurgii, tepelných zařízeních, chemickém průmyslu nebo při výrobě spalovacích systémů."
 ---
 Specializujeme se na zakázkovou a malosériovou výrobu žárovzdorných keramických tvarových materiálů, které jsou nedílnou součástí mnoha průmyslových odvětví. Naše produkty vynikají odolností vůči extrémním teplotám, chemické korozi i mechanickému namáhání.

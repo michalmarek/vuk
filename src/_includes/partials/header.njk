@@ -1,5 +1,6 @@
 {%- set homeHref = "/" if lang == "cs" else "/" + lang + "/" %}
 {%- set vyrobkyHref = "/vyrobky/" if lang == "cs" else "/" + lang + "/produkte/" %}
+{%- set faqHref = "/caste-dotazy/" if lang == "cs" else "/" + lang + "/haeufige-fragen/" %}
 {%- set t = i18n[lang] %}
 {%- set alts = collections.all | translations(translationKey) %}
 <header class="site-header" data-header>
@@ -11,7 +12,7 @@
     <nav class="site-nav" aria-label="Hlavní navigace">
       <a href="{{ vyrobkyHref }}" class="site-nav__link{{ ' is-active' if activeNav == 'vyrobky' }}">{{ t.nav.vyrobky }}</a>
       <a href="#" class="site-nav__link{{ ' is-active' if activeNav == 'jakObjednat' }}">{{ t.nav.jakObjednat }}</a>
-      <a href="#" class="site-nav__link{{ ' is-active' if activeNav == 'casteDotazy' }}">{{ t.nav.casteDotazy }}</a>
+      <a href="{{ faqHref }}" class="site-nav__link{{ ' is-active' if activeNav == 'casteDotazy' }}">{{ t.nav.casteDotazy }}</a>
       <a href="#" class="site-nav__link{{ ' is-active' if activeNav == 'oNas' }}">{{ t.nav.oNas }}</a>
       <a href="#" class="site-nav__link{{ ' is-active' if activeNav == 'kontakt' }}">{{ t.nav.kontakt }}</a>
     </nav>
@@ -48,7 +49,7 @@
       {%- endfor %}
     </div>
     <a href="#" class="mobile-menu__link">{{ t.nav.jakObjednat }}</a>
-    <a href="#" class="mobile-menu__link">{{ t.nav.casteDotazy }}</a>
+    <a href="{{ faqHref }}" class="mobile-menu__link">{{ t.nav.casteDotazy }}</a>
     <a href="#" class="mobile-menu__link">{{ t.nav.oNas }}</a>
     <a href="#" class="mobile-menu__link">{{ t.nav.kontakt }}</a>
     <div class="mobile-menu__langs">

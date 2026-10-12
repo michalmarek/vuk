@@ -1,0 +1,80 @@
+[
+  {
+    "kategorie": "Obecné",
+    "vyrobky": [],
+    "otazka": "Vyrábíte i jednotlivé kusy? Jaká je minimální objednávka?",
+    "odpoved": "Vyrábíme od jednoho kusu po rozsáhlé projekty."
+  },
+  {
+    "kategorie": "Obecné",
+    "vyrobky": [],
+    "otazka": "Jaká je dodací lhůta zakázkové výroby?",
+    "odpoved": "Dodací lhůta je u každé zakázky individuální. Záleží především na náročnosti technické přípravy a rozsahu zadání."
+  },
+  {
+    "kategorie": "Obecné",
+    "vyrobky": [],
+    "otazka": "Nabízíte montáž, nebo jen dodání výrobků?",
+    "odpoved": "Naše dílna se zabývá výrobou. Rádi vám doporučíme specializované firmy, které mají s naším materiálem zkušenosti."
+  },
+  {
+    "kategorie": "Technické",
+    "vyrobky": ["dlazba", "exterier"],
+    "otazka": "Je vhodná námi vyrobená dlažba do exteriéru?",
+    "odpoved": "Ano, naše výrobky mají STO (stavebně technické osvědčení) a další certifikáty – mrazuvzdornost i otěruvzdornost na barevně probarvené vrstvy."
+  },
+  {
+    "kategorie": "Technické",
+    "vyrobky": ["dlazba", "obklady"],
+    "otazka": "Jsou vaše výrobky vhodné do koupelny nebo kuchyně?",
+    "odpoved": "Ano. Naše výrobky najdou využití v koupelnách a kuchyních stejně jako v chodbách, obytných místnostech či komerčních interiérech."
+  },
+  {
+    "kategorie": "Technické",
+    "vyrobky": ["dlazba"],
+    "otazka": "Může se dlažba od nás „prošlapat“?",
+    "odpoved": "Barevná nášlapná vrstva je navržena tak, aby dlouhodobě odolávala intenzivnímu provozu i vysokému mechanickému zatížení. Odolnost a životnost máme technicky ověřenou ve zkušebním ústavu, a to i pro vysoce zatěžované objekty, jako jsou chodby, kostely, nádraží nebo veřejné budovy."
+  },
+  {
+    "kategorie": "Technické",
+    "vyrobky": ["dlazba"],
+    "otazka": "Jaké jsou výhody vaší dlažby oproti lisované z granulátů?",
+    "odpoved": "Nabízíme širokou barevnou škálu probarvení – barvy ladíme podle dodaného vzorku nebo dle přání zákazníka. K tomu flexibilitu rozměrů (standardní i atypické formáty) a osobní přístup s materiálovým vzorkem ke schválení, aby výsledek odpovídal vašim představám."
+  },
+  {
+    "kategorie": "Zakázková výroba",
+    "vyrobky": ["dlazba", "obklady"],
+    "otazka": "Můžete vyrobit dlažbu nebo obklady podle historické předlohy?",
+    "odpoved": "Ano, na výrobu kopií historických dlažeb a obkladů se naše dílna dlouhodobě specializuje."
+  },
+  {
+    "kategorie": "Zakázková výroba",
+    "vyrobky": ["dlazba", "obklady", "exterier"],
+    "otazka": "Dokážete napodobit barvu a strukturu starých obkladů?",
+    "odpoved": "Díky vlastním recepturám keramických hmot a ručně míchaným glazurám dokážeme věrně napodobit původní barvy, strukturu i charakter historických materiálů."
+  },
+  {
+    "kategorie": "Zakázková výroba",
+    "vyrobky": ["dlazba", "obklady"],
+    "otazka": "Potřebuji dodat vzorek pro vytvoření repliky?",
+    "odpoved": "Nejlepší je dodat původní vzorek. Často postačí i malý segment nebo střep původního prvku. Pokud to není možné, dokážeme kus vytvořit také podle fotografie nebo dostupné dokumentace."
+  },
+  {
+    "kategorie": "Speciální",
+    "vyrobky": ["kachle"],
+    "otazka": "Vyrábíte kachle i na moderní způsob vytápění?",
+    "odpoved": "Ano, vyrábíme kachle pro tradiční i moderní kachlová kamna. Rádi vám doporučíme zkušeného kamnáře. Zabýváme se také výrobou replik historických kamen a jednotlivých kachlů a tvarovek pro opravy cenných staveb a památkových objektů."
+  },
+  {
+    "kategorie": "Speciální",
+    "vyrobky": ["technicka"],
+    "otazka": "Co je to technická keramika a kde se používá?",
+    "odpoved": "Technická keramika zahrnuje žárovzdorné a vysoce odolné keramické materiály pro průmysl. Odolává vysokým teplotám, chemickému namáhání i opotřebení a používá se například ve sklářství, metalurgii, tepelných zařízeních, chemickém průmyslu nebo při výrobě spalovacích systémů."
+  },
+  {
+    "kategorie": "Speciální",
+    "vyrobky": ["specialni"],
+    "otazka": "Děláte i netradiční tvary a vzory podle přání zákazníka?",
+    "odpoved": "Ano. Každý projekt řešíme individuálně a možnosti výroby přizpůsobujeme konkrétním požadavkům i technickým možnostem naší dílny."
+  }
+]

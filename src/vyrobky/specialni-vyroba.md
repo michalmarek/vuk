@@ -27,8 +27,5 @@ nabidka:
     - "Prototypy, malé série i rozsáhlé instalace"
     - "Atypické tvary a glazury podle vaší vize"
   poznamka: "Neomezené možnosti barev a glazur nám umožňují přesně naplnit vaši představu."
-faq:
-  - otazka: "Děláte i netradiční tvary a vzory podle přání zákazníka?"
-    odpoved: "Ano, každý projekt řešíme individuálně a možnosti výroby přizpůsobujeme konkrétním požadavkům i technickým možnostem naší dílny."
 ---
 Speciální výroba představuje vrchol našeho řemeslného umění – potkává se tu tradiční zručnost s moderními technologiemi a neomezenou kreativitou. Realizujeme projekty, které překračují hranice běžné výroby, od architektonických prvků po umělecká díla.

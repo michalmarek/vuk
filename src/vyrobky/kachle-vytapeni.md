@@ -18,8 +18,5 @@ nabidka:
     - "Repliky historických kamen"
     - "Jednotlivé kachle a tvarovky pro opravy památkových objektů"
   poznamka: "Rádi vám doporučíme zkušeného kamnáře, se kterým své představy dovedete k dokonalému výsledku."
-faq:
-  - otazka: "Vyrábíte kachle i na moderní způsob vytápění?"
-    odpoved: "Ano, vyrábíme kachle pro tradiční i moderní kachlová kamna. Zabýváme se také výrobou replik historických kamen a jednotlivých kachlů a tvarovek určených pro opravy cenných staveb a památkových objektů."
 ---
 Vyrábíme kachle pro tradiční i moderní kachlová kamna a věrné repliky historických kachlů. Zabýváme se také výrobou jednotlivých kachlů a tvarovek určených pro opravy cenných staveb a památkových objektů.

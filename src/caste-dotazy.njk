@@ -1,0 +1,44 @@
+---
+layout: base.njk
+translationKey: caste-dotazy
+activeNav: casteDotazy
+title: "Časté dotazy"
+perex: "Nejčastější otázky k naší zakázkové výrobě. Nenašli jste odpověď? Ozvěte se nám telefonicky nebo e-mailem."
+---
+{%- set t = i18n[lang] %}
+{%- set vyrobkyList = collections.vyrobek | byLang(lang) %}
+{%- set skupiny = faq[lang] | seskupKategorie %}
+<div class="submenu-sentinel" aria-hidden="true"></div>
+{% include "partials/submenu-vyrobky.njk" %}
+
+<section class="faq-page">
+  <div class="container">
+    <header class="faq-page__head">
+      <h1 class="section-title">{{ t.nav.casteDotazy }}</h1>
+      {%- if perex %}<p class="faq-page__perex">{{ perex }}</p>{%- endif %}
+    </header>
+
+    {%- if skupiny.length %}
+    {%- for g in skupiny %}
+    <section class="faq-group">
+      <h2 class="faq-group__title">{{ g.kategorie }}</h2>
+      {%- for q in g.items %}
+      <details class="faq-item">
+        <summary>{{ q.otazka }}<span class="faq-item__mark" aria-hidden="true">+</span></summary>
+        <div class="faq-item__body">
+          <p>{{ q.odpoved }}</p>
+          {%- if q.vyrobky and q.vyrobky.length %}
+          <div class="faq-tags">
+            {%- for v in q.vyrobky %}<span class="faq-tag">{{ vyrobkyList | nazevVyrobku(v) }}</span>{%- endfor %}
+          </div>
+          {%- endif %}
+        </div>
+      </details>
+      {%- endfor %}
+    </section>
+    {%- endfor %}
+    {%- else %}
+    <p class="faq-page__empty">{{ t.pripravujeme }}</p>
+    {%- endif %}
+  </div>
+</section>
