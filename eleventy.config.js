@@ -32,6 +32,11 @@ export default function (eleventyConfig) {
     (items || []).filter((r) => r.homepage)
   );
 
+  // Reference daného výrobku (pro galerii na stránce výrobku)
+  eleventyConfig.addFilter("proVyrobek", (items, key) =>
+    (items || []).filter((r) => r.vyrobek === key)
+  );
+
   // Omez pole na prvních n položek
   eleventyConfig.addFilter("limit", (arr, n) => (arr || []).slice(0, n));
 

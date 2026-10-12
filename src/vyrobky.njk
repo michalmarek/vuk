@@ -1,0 +1,24 @@
+---
+layout: base.njk
+translationKey: vyrobky
+activeNav: vyrobky
+title: "Výrobky"
+description: "Šest oborů zakázkové keramické výroby: historická dlažba, obklady a tvarovky, exteriérová a technická keramika, speciální výroba a kachle."
+---
+{%- set t = i18n[lang] %}
+<section class="produce produce--page">
+  <div class="container">
+    <div class="produce__head">
+      <div>
+        <p class="eyebrow">{{ t.coVyrabimeNadtitulek }}</p>
+        <h1 class="section-title">{{ t.nav.vyrobky }}</h1>
+      </div>
+      <p class="produce__perex">{{ t.coVyrabimePerex }}</p>
+    </div>
+    <div class="card-grid">
+      {%- for p in collections.vyrobek | byLang(lang) %}
+      {% include "partials/card-vyrobek.njk" %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>

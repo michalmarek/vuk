@@ -8,6 +8,18 @@ line: "Kachle pro tradiční i moderní kamna a repliky historických."
 podtitulek: "Kachle pro kamna a krby"
 icon: "kachle-vytapeni"
 img: "/assets/img/L3621.jpg"
+heroFoto: "/assets/img/L3621.jpg"
 title: "Kachle a vytápění"
+# Bloky doplníme, až dorazí finální text k tomuto výrobku.
+nabidka:
+  nadpis: "Co vyrábíme"
+  polozky:
+    - "Kachle pro tradiční i moderní kachlová kamna"
+    - "Repliky historických kamen"
+    - "Jednotlivé kachle a tvarovky pro opravy památkových objektů"
+  poznamka: "Rádi vám doporučíme zkušeného kamnáře, se kterým své představy dovedete k dokonalému výsledku."
+faq:
+  - otazka: "Vyrábíte kachle i na moderní způsob vytápění?"
+    odpoved: "Ano, vyrábíme kachle pro tradiční i moderní kachlová kamna. Zabýváme se také výrobou replik historických kamen a jednotlivých kachlů a tvarovek určených pro opravy cenných staveb a památkových objektů."
 ---
-Kachle pro tradiční i moderní kamna a věrné repliky historických kachlů.
+Vyrábíme kachle pro tradiční i moderní kachlová kamna a věrné repliky historických kachlů. Zabýváme se také výrobou jednotlivých kachlů a tvarovek určených pro opravy cenných staveb a památkových objektů.

@@ -8,6 +8,11 @@
     "mesto": "318 00 Plzeň (areál ESSPE)"
   },
   "ico": "00000000",
+  "kontaktOsoba": {
+    "jmeno": "Jana Fialová",
+    "telefon": "+420 605 217 473",
+    "telefonRaw": "+420605217473"
+  },
   "languages": [
     { "code": "cs", "label": "CZ", "home": "/" },
     { "code": "de", "label": "DE", "home": "/de/" }

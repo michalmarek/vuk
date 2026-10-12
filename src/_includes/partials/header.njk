@@ -1,4 +1,5 @@
 {%- set homeHref = "/" if lang == "cs" else "/" + lang + "/" %}
+{%- set vyrobkyHref = "/vyrobky/" if lang == "cs" else "/" + lang + "/produkte/" %}
 {%- set t = i18n[lang] %}
 {%- set alts = collections.all | translations(translationKey) %}
 <header class="site-header" data-header>
@@ -8,7 +9,7 @@
     </a>
 
     <nav class="site-nav" aria-label="Hlavní navigace">
-      <a href="#" class="site-nav__link{{ ' is-active' if activeNav == 'vyrobky' }}">{{ t.nav.vyrobky }}</a>
+      <a href="{{ vyrobkyHref }}" class="site-nav__link{{ ' is-active' if activeNav == 'vyrobky' }}">{{ t.nav.vyrobky }}</a>
       <a href="#" class="site-nav__link{{ ' is-active' if activeNav == 'jakObjednat' }}">{{ t.nav.jakObjednat }}</a>
       <a href="#" class="site-nav__link{{ ' is-active' if activeNav == 'casteDotazy' }}">{{ t.nav.casteDotazy }}</a>
       <a href="#" class="site-nav__link{{ ' is-active' if activeNav == 'oNas' }}">{{ t.nav.oNas }}</a>

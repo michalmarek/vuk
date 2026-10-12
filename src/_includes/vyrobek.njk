@@ -4,25 +4,125 @@ activeNav: vyrobky
 ---
 {%- set t = i18n[lang] %}
 {%- set activeVyrobek = translationKey %}
+{%- set vyrobkyHref = "/vyrobky/" if lang == "cs" else "/" + lang + "/produkte/" %}
+{%- set galerie = reference | proVyrobek(translationKey) %}
 {% include "partials/submenu-vyrobky.njk" %}
 
-<section class="product-hero">
-  <div class="container">
-    <p class="breadcrumb"><a href="#">{{ t.nav.vyrobky }}</a> / {{ name }}</p>
-    <h1 class="product-hero__title">{{ name }}</h1>
-    {%- if podtitulek %}
-    <p class="product-hero__subtitle">{{ podtitulek }}</p>
-    {%- endif %}
+{# ---------- Hero (fullbleed) ---------- #}
+<section class="phero" style="background-image:linear-gradient(rgba(46,42,44,.45),rgba(46,42,44,.55)),url('{{ heroFoto or img }}')">
+  <div class="container phero__inner">
+    <p class="phero__crumb"><a href="{{ vyrobkyHref }}">{{ t.nav.vyrobky }}</a> / {{ name }}</p>
+    <h1 class="phero__title">{{ name }}</h1>
+    {%- if podtitulek %}<p class="phero__subtitle">{{ podtitulek }}</p>{%- endif %}
     <div class="btn-row">
       <a href="tel:{{ site.telefonRaw }}" class="btn btn--primary">{{ t.zavolejte }} {{ site.telefon }}</a>
-      <a href="mailto:{{ site.email }}" class="btn btn--ghost">{{ t.napisteNam }}</a>
+      <a href="mailto:{{ site.email }}" class="btn btn--ghost btn--ghost-light">{{ t.napisteNam }}</a>
     </div>
   </div>
 </section>
 
-<section class="product-intro">
-  <div class="container">
-    <div class="prose">{{ content | safe }}</div>
-    <p class="back-link"><a href="#">← {{ t.nav.vyrobky }}</a></p>
+{# ---------- Úvodní odstavec ---------- #}
+{%- if content %}
+<section class="pintro"><div class="container"><div class="prose">{{ content | safe }}</div></div></section>
+{%- endif %}
+
+{# ---------- Tři bloky ---------- #}
+{%- if bloky %}
+<section class="pbloky"><div class="container">
+  {%- for b in bloky %}
+  <div class="pblok"><h3>{{ b.nadpis }}</h3><p>{{ b.text }}</p></div>
+  {%- endfor %}
+</div></section>
+{%- endif %}
+
+{# ---------- Nabídka zahrnuje ---------- #}
+{%- if nabidka %}
+<section class="pnabidka{{ ' pnabidka--foto' if nabidka.foto }}"><div class="container">
+  {%- if nabidka.foto %}
+  <div class="pnabidka__fotky">
+    {%- for f in nabidka.foto %}<img src="{{ f }}" alt="" loading="lazy" class="pnabidka__foto">{%- endfor %}
   </div>
-</section>
+  {%- endif %}
+  <div class="pnabidka__text">
+    <h2>{{ nabidka.nadpis }}</h2>
+    <ul class="pnabidka__list">
+      {%- for item in nabidka.polozky %}<li>{{ item }}</li>{%- endfor %}
+    </ul>
+    {%- if nabidka.poznamka %}<p class="pnabidka__note">{{ nabidka.poznamka }}</p>{%- endif %}
+  </div>
+</div></section>
+{%- endif %}
+
+{# ---------- Postup výroby (volitelné) ---------- #}
+{%- if postup %}
+<section class="ppostup"><div class="container">
+  <h2>{{ postup.nadpis }}</h2>
+  <div class="ppostup__grid">
+    {%- for k in postup.kroky %}
+    <div class="ppostup__krok">
+      <span class="ppostup__n">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+      <div><span class="ppostup__t">{{ k.nazev }}</span><span class="ppostup__d">{{ k.popis }}</span></div>
+    </div>
+    {%- endfor %}
+  </div>
+</div></section>
+{%- endif %}
+
+{# ---------- Ukázky realizací ---------- #}
+{%- if galerie.length %}
+<section class="pgalerie"><div class="container">
+  <h2 class="pgalerie__nadpis">{{ t.ukazkyRealizaci }}</h2>
+  <div class="pgalerie__grid">
+    {%- for r in galerie %}
+    <div class="pgalerie__item">
+      {%- set foto = r.foto | existujiciFoto %}
+      {%- if foto %}
+      <img class="pgalerie__foto" src="{{ foto }}" alt="{{ r.nazev }}, {{ r.mesto }}" loading="lazy">
+      {%- else %}
+      <div class="pgalerie__foto ph"><span>foto realizace</span></div>
+      {%- endif %}
+      <div class="pgalerie__caption"><span class="pgalerie__name">{{ r.nazev }}</span><span class="pgalerie__city">{{ r.mesto }}</span></div>
+    </div>
+    {%- endfor %}
+  </div>
+</div></section>
+{%- endif %}
+
+{# ---------- FAQ + kontaktní box ---------- #}
+{%- if faq %}
+<section class="pfaq"><div class="container">
+  <div class="pfaq__list">
+    <h2>{{ t.casteDotazyNadpis }}</h2>
+    {%- for q in faq %}
+    <details class="faq-item">
+      <summary>{{ q.otazka }}<span class="faq-item__mark" aria-hidden="true">+</span></summary>
+      <p>{{ q.odpoved }}</p>
+    </details>
+    {%- endfor %}
+  </div>
+  <aside class="pkontakt">
+    <h3>{{ t.ctaNadpis }}</h3>
+    <p>{{ t.kontaktBoxText }}</p>
+    <div class="pkontakt__osoba">
+      <span class="pkontakt__jmeno">{{ site.kontaktOsoba.jmeno }}</span>
+      <a href="tel:{{ site.kontaktOsoba.telefonRaw }}" class="pkontakt__tel">{{ site.kontaktOsoba.telefon }}</a>
+      <a href="mailto:{{ site.email }}" class="pkontakt__mail">{{ site.email }}</a>
+    </div>
+  </aside>
+</div></section>
+{%- endif %}
+
+{# ---------- Další výrobky ---------- #}
+<section class="pdalsi"><div class="container">
+  <h2>{{ t.dalsiVyrobky }}</h2>
+  <div class="pdalsi__grid">
+    {%- for p in collections.vyrobek | byLang(lang) %}
+    {%- if p.data.translationKey != translationKey %}
+    <a href="{{ p.url }}" class="pdalsi__item">
+      <img src="{{ p.data.img }}" alt="{{ p.data.name }}" loading="lazy">
+      <span>{{ p.data.name }}</span>
+    </a>
+    {%- endif %}
+    {%- endfor %}
+  </div>
+</div></section>
