@@ -1,16 +1,19 @@
 {%- set t = i18n[lang] %}
 {%- set vyrobkyHref = "/vyrobky/" if lang == "cs" else "/" + lang + "/produkte/" %}
 {%- set faqHref = "/caste-dotazy/" if lang == "cs" else "/" + lang + "/haeufige-fragen/" %}
+{%- set jakHref = "/jak-objednat/" if lang == "cs" else "/" + lang + "/so-bestellen/" %}
+{%- set oNasHref = "/o-nas/" if lang == "cs" else "/" + lang + "/ueber-uns/" %}
+{%- set kontaktHref = "/kontakt/" if lang == "cs" else "/" + lang + "/kontakt/" %}
 <footer class="site-footer">
   <div class="container site-footer__inner">
     <div class="site-footer__brand">
       <img src="/assets/img/vuk-logo-white.svg" alt="VUK objekt" width="72" height="30">
       <nav class="site-footer__nav">
         <a href="{{ vyrobkyHref }}">{{ t.nav.vyrobky }}</a>
-        <a href="#">{{ t.nav.jakObjednat }}</a>
+        <a href="{{ jakHref }}">{{ t.nav.jakObjednat }}</a>
         <a href="{{ faqHref }}">{{ t.nav.casteDotazy }}</a>
-        <a href="#">{{ t.nav.oNas }}</a>
-        <a href="#">{{ t.nav.kontakt }}</a>
+        <a href="{{ oNasHref }}">{{ t.nav.oNas }}</a>
+        <a href="{{ kontaktHref }}">{{ t.nav.kontakt }}</a>
       </nav>
     </div>
     <div class="site-footer__meta">

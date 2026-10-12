@@ -1,0 +1,40 @@
+---
+layout: base.njk
+translationKey: o-nas
+activeNav: oNas
+submenuCompact: true
+title: "Über uns"
+lead: "Wir schaffen Keramik, die Generationen überdauert."
+perex: "Seit über 25 Jahren schaffen wir Keramik, die traditionelle handwerkliche Qualität mit den individuellen Bedürfnissen jedes Projekts verbindet."
+foto: "/assets/img/61.jpg"
+---
+{%- set t = i18n[lang] %}
+<div class="submenu-sentinel" aria-hidden="true"></div>
+{% include "partials/submenu-vyrobky.njk" %}
+
+<section class="page-head"><div class="container">
+  <h1 class="section-title">{{ title }}</h1>
+  <p class="page-head__lead">{{ lead }}</p>
+  <p class="page-head__perex">{{ perex }}</p>
+</div></section>
+
+<section class="about"><div class="container">
+  <img class="about__photo" src="{{ foto }}" alt="Produktionshalle VUK objekt" loading="lazy">
+  <div class="about__text">
+    <p>Wir sind eine Keramikmanufaktur, spezialisiert auf keramische Elemente für Außen- und Innenbereiche von Gebäuden. Unsere Produkte finden Sie in historischen Objekten wie auch in Neubauten weltweit – von den Verkleidungen des Prager Hauptbahnhofs bis zu Plastiken für ein Krankenhaus im japanischen Osaka.</p>
+    <p>Jedes Produkt fertigen wir von Hand mit einer unbegrenzten Farb- und Formpalette, was uns sowohl ganz neue Projekte als auch Repliken für lokale Reparaturen historischer Objekte ermöglicht.</p>
+  </div>
+</div></section>
+
+<section class="info2"><div class="container">
+  <div>
+    <h3>Was wir herstellen</h3>
+    <p>Wir bieten ein komplettes Portfolio keramischer Produkte – historische Fliesen, Verkleidungen und Formsteine, Außen- und Technische Keramik, Kacheln zum Heizen und Spezialanfertigungen. Wir sind auf formgebungsintensive Elemente wie Gesimse, Hohlkehlen und Eckstücke spezialisiert.</p>
+  </div>
+  <div>
+    <h3>Wie wir arbeiten</h3>
+    <p>Jedes Produkt entsteht auf Bestellung, genau nach Ihren Anforderungen. Dadurch sind wir ein gefragter Partner von Architekten, Restauratoren und Baufirmen. Unser Team aus zehn erfahrenen Mitarbeitern verbindet langjährige Erfahrung mit einem persönlichen Zugang zu jedem Projekt.</p>
+  </div>
+</div></section>
+
+{% include "partials/cta.njk" %}

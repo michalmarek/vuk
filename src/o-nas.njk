@@ -1,0 +1,40 @@
+---
+layout: base.njk
+translationKey: o-nas
+activeNav: oNas
+submenuCompact: true
+title: "O nás"
+lead: "Tvoříme keramiku, která vydrží generace."
+perex: "Více než 25 let vytváříme keramiku, která spojuje tradiční řemeslnou kvalitu s individuálními potřebami každého projektu."
+foto: "/assets/img/61.jpg"
+---
+{%- set t = i18n[lang] %}
+<div class="submenu-sentinel" aria-hidden="true"></div>
+{% include "partials/submenu-vyrobky.njk" %}
+
+<section class="page-head"><div class="container">
+  <h1 class="section-title">{{ title }}</h1>
+  <p class="page-head__lead">{{ lead }}</p>
+  <p class="page-head__perex">{{ perex }}</p>
+</div></section>
+
+<section class="about"><div class="container">
+  <img class="about__photo" src="{{ foto }}" alt="Výrobní hala VUK objekt" loading="lazy">
+  <div class="about__text">
+    <p>Jsme zakázková keramická dílna specializující se na výrobu keramických prvků pro exteriéry i interiéry budov. Naše produkty naleznete v historických objektech i v nových stavbách po celém světě – od obkladů hlavního nádraží v Praze až po plastiky pro nemocnici v japonské Ósace.</p>
+    <p>Každý výrobek vyrábíme ručně s neomezenou paletou barev a tvarů, což nám umožňuje realizovat jak zcela nové projekty, tak repliky pro lokální opravy historických objektů.</p>
+  </div>
+</div></section>
+
+<section class="info2"><div class="container">
+  <div>
+    <h3>Co vyrábíme</h3>
+    <p>Nabízíme kompletní portfolio keramických výrobků – historickou dlažbu, obklady a tvarovky, exteriérovou i technickou keramiku, kachle pro vytápění a speciální zakázkovou výrobu. Specializujeme se na tvarově složité prvky jako římsy, požlábky a nárožky.</p>
+  </div>
+  <div>
+    <h3>Jak pracujeme</h3>
+    <p>Každý výrobek je vytvořen na zakázku přesně podle vašich požadavků. Díky tomu jsme vyhledávaným partnerem architektů, restaurátorů i stavebních firem. Náš tým deseti zkušených pracovníků spojuje celoživotní zkušenosti z oboru s osobním přístupem ke každému projektu.</p>
+  </div>
+</div></section>
+
+{% include "partials/cta.njk" %}

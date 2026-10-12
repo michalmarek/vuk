@@ -30,11 +30,12 @@
     "obklady": "obklady",
     "plastiky": "keramické plastiky"
   },
+  "postupNadpis": "Postup objednávky",
   "kroky": [
-    { "cislo": "01", "nazev": "Kontakt a konzultace", "popis": "Ozvěte se nám telefonicky nebo e-mailem s popisem vašeho projektu." },
-    { "cislo": "02", "nazev": "Osobní návštěva", "popis": "Prohlédneme si keramiku, která má být nahrazena nebo doplněna, a vyzvedneme vzorky." },
-    { "cislo": "03", "nazev": "Dodání předlohy", "popis": "Původní kus, střepy, fotografie nebo technická dokumentace." },
-    { "cislo": "04", "nazev": "Materiálový vzorek ke schválení", "popis": "Před zahájením samotné výroby vám vyrobíme materiálový vzorek." },
+    { "cislo": "01", "nazev": "Kontakt a konzultace", "popis": "Ozvěte se nám telefonicky nebo e-mailem s popisem projektu. Probereme technické detaily, termíny i ceny." },
+    { "cislo": "02", "nazev": "Osobní návštěva", "popis": "Prohlédneme si keramiku, která má být nahrazena nebo doplněna, a vyzvedneme vzorky – stačí i střepy poškozených tvarovek nebo obkladů." },
+    { "cislo": "03", "nazev": "Dodání předlohy", "popis": "Vyrábíme podle vámi dodané předlohy: původní kus, střepy, fotografie, dokumentace nebo výběr z našich realizovaných vzorů." },
+    { "cislo": "04", "nazev": "Materiálový vzorek ke schválení", "popis": "Před zahájením samotné výroby vám vyrobíme materiálový vzorek ke schválení." },
     { "cislo": "05", "nazev": "Výroba", "popis": "Po schválení vzorku přistoupíme k výrobě vašeho projektu." },
     { "cislo": "06", "nazev": "Dodání", "popis": "Hotové výrobky vám dodáme ve sjednaném termínu." }
   ],

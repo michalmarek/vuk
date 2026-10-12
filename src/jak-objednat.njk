@@ -1,0 +1,34 @@
+---
+layout: base.njk
+translationKey: jak-objednat
+activeNav: jakObjednat
+submenuCompact: true
+title: "Jak objednat"
+lead: "Váš projekt od první konzultace po finální výrobek"
+perex: "Každá zakázka je u nás jedinečná. Rozumíme tomu, že každý projekt vyžaduje individuální přístup – od renovace historických objektů po realizaci nových zakázek. Proto s vámi projdeme celým procesem krok za krokem."
+---
+{%- set t = i18n[lang] %}
+{%- set postup = { nadpis: t.postupNadpis, kroky: t.kroky } %}
+<div class="submenu-sentinel" aria-hidden="true"></div>
+{% include "partials/submenu-vyrobky.njk" %}
+
+<section class="page-head"><div class="container">
+  <h1 class="section-title">{{ title }}</h1>
+  <p class="page-head__lead">{{ lead }}</p>
+  <p class="page-head__perex">{{ perex }}</p>
+</div></section>
+
+{% include "partials/postup.njk" %}
+
+<section class="info2"><div class="container">
+  <div>
+    <h3>Lokální opravy</h3>
+    <p>Specializujeme se také na výrobu jednotlivých kusů pro lokální opravy historických objektů – doplníme i pár poškozených dlaždic nebo tvarovek tak, aby dokonale zapadly do původního celku.</p>
+  </div>
+  <div>
+    <h3>Neomezené možnosti barev</h3>
+    <p>Díky vlastnímu vývoji glazur a práci s keramickými hmotami dokážeme dosáhnout prakticky jakékoliv barvy a sladit ji s originálem nebo přesně podle vaší představy.</p>
+  </div>
+</div></section>
+
+{% include "partials/cta.njk" %}

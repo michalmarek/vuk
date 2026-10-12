@@ -1,0 +1,40 @@
+---
+layout: base.njk
+translationKey: kontakt
+activeNav: kontakt
+submenuCompact: true
+title: "Kontakt"
+perex: "Zavolejte nebo napište s popisem projektu. Rádi přijedeme na místo a prohlédneme si keramiku, která má být nahrazena nebo doplněna."
+---
+{%- set t = i18n[lang] %}
+{%- set mapQuery = (site.adresa.ulice + ", Plzeň") | urlencode %}
+<div class="submenu-sentinel" aria-hidden="true"></div>
+{% include "partials/submenu-vyrobky.njk" %}
+
+<section class="page-head"><div class="container">
+  <h1 class="section-title">{{ title }}</h1>
+  <p class="page-head__perex">{{ perex }}</p>
+</div></section>
+
+<section class="kontakt"><div class="container">
+  <div class="kontakt__col">
+    <h2>Kde nás najdete</h2>
+    <span class="kontakt__line"><strong>{{ site.nazev }}</strong></span>
+    <span class="kontakt__line">{{ site.adresa.ulice }}</span>
+    <span class="kontakt__line">{{ site.adresa.mesto }}</span>
+    <span class="kontakt__line">IČO: {{ site.ico }}</span>
+    <a class="kontakt__maplink" href="https://www.google.com/maps/search/?api=1&query={{ mapQuery }}" target="_blank" rel="noopener">Zobrazit na mapě →</a>
+  </div>
+  <div class="kontakt__col">
+    <h2>Spojte se s námi</h2>
+    <span class="kontakt__line">Telefon</span>
+    <a class="kontakt__big" href="tel:{{ site.telefonRaw }}">{{ site.telefon }}</a>
+    <span class="kontakt__line" style="margin-top:14px">E-mail</span>
+    <a class="kontakt__big" href="mailto:{{ site.email }}">{{ site.email }}</a>
+    <div class="kontakt__osoba">
+      <span class="kontakt__line"><strong>Kontaktní osoba</strong></span>
+      <span class="kontakt__line">{{ site.kontaktOsoba.jmeno }}</span>
+      <a class="kontakt__big" href="tel:{{ site.kontaktOsoba.telefonRaw }}">{{ site.kontaktOsoba.telefon }}</a>
+    </div>
+  </div>
+</div></section>

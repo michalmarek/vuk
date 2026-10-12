@@ -1,0 +1,19 @@
+{%- set t = i18n[lang] %}
+<section class="cta">
+  <div class="container cta__inner">
+    <div>
+      <h2 class="cta__title">{{ t.ctaNadpis }}</h2>
+      <p class="cta__perex">{{ t.ctaPerex }}</p>
+      <div class="cta__contacts">
+        <a href="tel:{{ site.telefonRaw }}">{{ site.telefon }}</a>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </div>
+    </div>
+    <address class="cta__address">
+      <strong>{{ site.nazev }}</strong>
+      <span>{{ site.adresa.ulice }}</span>
+      <span>{{ site.adresa.mesto }}</span>
+      <span class="cta__ico">IČO: {{ site.ico }}</span>
+    </address>
+  </div>
+</section>

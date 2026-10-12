@@ -30,6 +30,7 @@
     "obklady": "Verkleidungen",
     "plastiky": "Keramikplastiken"
   },
+  "postupNadpis": "Bestellablauf",
   "kroky": [
     { "cislo": "01", "nazev": "Kontakt und Beratung", "popis": "Melden Sie sich telefonisch oder per E-Mail mit einer Beschreibung Ihres Projekts." },
     { "cislo": "02", "nazev": "Besuch vor Ort", "popis": "Wir sehen uns die zu ersetzende oder zu ergänzende Keramik an und nehmen Muster mit." },

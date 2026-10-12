@@ -1,0 +1,34 @@
+---
+layout: base.njk
+translationKey: jak-objednat
+activeNav: jakObjednat
+submenuCompact: true
+title: "So bestellen"
+lead: "Ihr Projekt von der ersten Beratung bis zum fertigen Produkt"
+perex: "Jeder Auftrag ist bei uns einzigartig. Wir wissen, dass jedes Projekt einen individuellen Zugang erfordert – von der Sanierung historischer Objekte bis zu Neuanfertigungen. Deshalb gehen wir den gesamten Prozess Schritt für Schritt mit Ihnen durch."
+---
+{%- set t = i18n[lang] %}
+{%- set postup = { nadpis: t.postupNadpis, kroky: t.kroky } %}
+<div class="submenu-sentinel" aria-hidden="true"></div>
+{% include "partials/submenu-vyrobky.njk" %}
+
+<section class="page-head"><div class="container">
+  <h1 class="section-title">{{ title }}</h1>
+  <p class="page-head__lead">{{ lead }}</p>
+  <p class="page-head__perex">{{ perex }}</p>
+</div></section>
+
+{% include "partials/postup.njk" %}
+
+<section class="info2"><div class="container">
+  <div>
+    <h3>Lokale Reparaturen</h3>
+    <p>Wir fertigen auch einzelne Stücke für lokale Reparaturen historischer Objekte – wir ergänzen auch nur einige beschädigte Fliesen oder Formsteine so, dass sie perfekt ins ursprüngliche Ganze passen.</p>
+  </div>
+  <div>
+    <h3>Unbegrenzte Farbmöglichkeiten</h3>
+    <p>Dank eigener Glasurentwicklung und Arbeit mit keramischen Massen erreichen wir praktisch jede Farbe und stimmen sie auf das Original oder genau nach Ihrer Vorstellung ab.</p>
+  </div>
+</div></section>
+
+{% include "partials/cta.njk" %}

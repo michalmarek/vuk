@@ -59,19 +59,7 @@ activeNav: vyrobky
 {%- endif %}
 
 {# ---------- Postup výroby (volitelné) ---------- #}
-{%- if postup %}
-<section class="ppostup"><div class="container">
-  <h2>{{ postup.nadpis }}</h2>
-  <div class="ppostup__grid">
-    {%- for k in postup.kroky %}
-    <div class="ppostup__krok">
-      <span class="ppostup__n">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
-      <div><span class="ppostup__t">{{ k.nazev }}</span><span class="ppostup__d">{{ k.popis }}</span></div>
-    </div>
-    {%- endfor %}
-  </div>
-</div></section>
-{%- endif %}
+{%- if postup %}{% include "partials/postup.njk" %}{%- endif %}
 
 {# ---------- Ukázky realizací ---------- #}
 {%- if galerie.length %}
