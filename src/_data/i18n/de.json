@@ -17,6 +17,21 @@
   "ctaNadpis": "Haben Sie eine Frage oder möchten Sie bestellen?",
   "ctaPerex": "Rufen Sie an oder schreiben Sie uns mit einer Beschreibung Ihres Projekts. Wir kommen gern vorbei und sehen uns die Keramik an, die ersetzt oder ergänzt werden soll.",
   "copyright": "© VUK objekt s.r.o.",
+  "celyPostup": "Ganzer Bestellablauf →",
+  "viceODilne": "Mehr über die Werkstatt →",
+  "typy": {
+    "dlazba": "Fliesen",
+    "obklady": "Verkleidungen",
+    "plastiky": "Keramikplastiken"
+  },
+  "kroky": [
+    { "cislo": "01", "nazev": "Kontakt und Beratung", "popis": "Melden Sie sich telefonisch oder per E-Mail mit einer Beschreibung Ihres Projekts." },
+    { "cislo": "02", "nazev": "Besuch vor Ort", "popis": "Wir sehen uns die zu ersetzende oder zu ergänzende Keramik an und nehmen Muster mit." },
+    { "cislo": "03", "nazev": "Vorlage liefern", "popis": "Originalstück, Scherben, Fotos oder technische Dokumentation." },
+    { "cislo": "04", "nazev": "Materialmuster zur Freigabe", "popis": "Vor Produktionsbeginn fertigen wir ein Materialmuster an." },
+    { "cislo": "05", "nazev": "Produktion", "popis": "Nach Freigabe des Musters starten wir die Produktion Ihres Projekts." },
+    { "cislo": "06", "nazev": "Lieferung", "popis": "Die fertigen Produkte liefern wir zum vereinbarten Termin." }
+  ],
   "fakta": [
     { "big": "25+ Jahre", "small": "Erfahrung in Bau- und Feuerfestkeramik" },
     { "big": "Ab 1 Stück", "small": "bis zu umfangreichen Projekten und ganzen Böden" },

@@ -17,6 +17,21 @@
   "ctaNadpis": "Máte dotaz, chcete objednat?",
   "ctaPerex": "Zavolejte nebo napište s popisem projektu. Rádi přijedeme na místo a prohlédneme si keramiku, která má být nahrazena nebo doplněna.",
   "copyright": "© VUK objekt s.r.o.",
+  "celyPostup": "Celý postup objednávky →",
+  "viceODilne": "Více o dílně →",
+  "typy": {
+    "dlazba": "dlažba",
+    "obklady": "obklady",
+    "plastiky": "keramické plastiky"
+  },
+  "kroky": [
+    { "cislo": "01", "nazev": "Kontakt a konzultace", "popis": "Ozvěte se nám telefonicky nebo e-mailem s popisem vašeho projektu." },
+    { "cislo": "02", "nazev": "Osobní návštěva", "popis": "Prohlédneme si keramiku, která má být nahrazena nebo doplněna, a vyzvedneme vzorky." },
+    { "cislo": "03", "nazev": "Dodání předlohy", "popis": "Původní kus, střepy, fotografie nebo technická dokumentace." },
+    { "cislo": "04", "nazev": "Materiálový vzorek ke schválení", "popis": "Před zahájením samotné výroby vám vyrobíme materiálový vzorek." },
+    { "cislo": "05", "nazev": "Výroba", "popis": "Po schválení vzorku přistoupíme k výrobě vašeho projektu." },
+    { "cislo": "06", "nazev": "Dodání", "popis": "Hotové výrobky vám dodáme ve sjednaném termínu." }
+  ],
   "fakta": [
     { "big": "25+ let", "small": "v oboru stavební a žárovzdorné keramiky" },
     { "big": "Od 1 kusu", "small": "po rozsáhlé projekty a celé podlahy" },

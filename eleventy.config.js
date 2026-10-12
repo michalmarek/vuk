@@ -25,6 +25,14 @@ export default function (eleventyConfig) {
     return hit ? hit.url : fallback;
   });
 
+  // Reference ručně označené pro úvodní stránku (homepage: true)
+  eleventyConfig.addFilter("naHp", (items) =>
+    (items || []).filter((r) => r.homepage)
+  );
+
+  // Omez pole na prvních n položek
+  eleventyConfig.addFilter("limit", (arr, n) => (arr || []).slice(0, n));
+
   return {
     dir: { input: "src", output: "_site", includes: "_includes", data: "_data" },
     markdownTemplateEngine: "njk",

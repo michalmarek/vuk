@@ -1,8 +1,8 @@
 [
-  { "nazev": "Velká synagoga", "mesto": "Plzeň", "typ": "dlazba", "vyrobek": "dlazba", "foto": [] },
-  { "nazev": "Café Imperial", "mesto": "Praha", "typ": "dlazba", "vyrobek": "dlazba", "foto": [] },
-  { "nazev": "Obecní dům", "mesto": "Praha", "typ": "dlazba", "vyrobek": "dlazba", "foto": [] },
-  { "nazev": "Hlavní nádraží", "mesto": "Praha", "typ": "obklady", "vyrobek": "obklady", "foto": [] },
-  { "nazev": "Zámek Kratochvíle", "mesto": "Netolice", "typ": "dlazba", "vyrobek": "dlazba", "foto": [] },
-  { "nazev": "Nemocnice", "mesto": "Ósaka", "typ": "plastiky", "vyrobek": "specialni", "foto": [] }
+  { "nazev": "Hlavní nádraží", "mesto": "Praha", "typ": "obklady", "vyrobek": "obklady", "homepage": true, "foto": [] },
+  { "nazev": "Velká synagoga", "mesto": "Plzeň", "typ": "dlazba", "vyrobek": "dlazba", "homepage": true, "foto": [] },
+  { "nazev": "Café Imperial", "mesto": "Praha", "typ": "dlazba", "vyrobek": "dlazba", "homepage": true, "foto": [] },
+  { "nazev": "Obecní dům", "mesto": "Praha", "typ": "dlazba", "vyrobek": "dlazba", "homepage": true, "foto": [] },
+  { "nazev": "Zámek Kratochvíle", "mesto": "Netolice", "typ": "dlazba", "vyrobek": "dlazba", "homepage": true, "foto": [] },
+  { "nazev": "Nemocnice", "mesto": "Ósaka", "typ": "plastiky", "vyrobek": "specialni", "homepage": false, "foto": [] }
 ]

@@ -46,6 +46,64 @@ layout: base.njk
   </div>
 </section>
 
+<section class="order">
+  <div class="container">
+    <div class="order__intro">
+      <h2>{{ jakNadpis }}</h2>
+      <p>{{ jakPerex }}</p>
+      <img class="order__photo" src="{{ jakFoto }}" alt="{{ jakFotoAlt }}" loading="lazy">
+    </div>
+    <div class="order__steps">
+      {%- for k in t.kroky %}
+      <div class="step">
+        <span class="step__n">{{ k.cislo }}</span>
+        <div>
+          <span class="step__t">{{ k.nazev }}</span>
+          <span class="step__d">{{ k.popis }}</span>
+        </div>
+      </div>
+      {%- endfor %}
+      <a href="#" class="inline-link">{{ t.celyPostup }}</a>
+    </div>
+  </div>
+</section>
+
+<section class="refs">
+  {%- set hpRefs = reference | naHp %}
+  <div class="container">
+    <div class="refs__intro">
+      <h2>{{ refNadpis }}</h2>
+      <p>{{ refPerex }}</p>
+      <div class="refs__list">
+        {%- for r in hpRefs %}
+        <div class="ref-row">
+          <span class="ref-row__name">{{ r.nazev }}, {{ r.mesto }}</span>
+          <span class="ref-row__what">{{ t.typy[r.typ] }}</span>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+    <div class="refs__mosaic">
+      {%- for r in hpRefs | limit(3) %}
+      {%- set variant = "wide" if loop.first else "sq" %}
+      {% include "partials/realizace-foto.njk" %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="container">
+    <img class="about__photo" src="{{ oNasFoto }}" alt="{{ oNasFotoAlt }}" loading="lazy">
+    <div class="about__text">
+      <h2>{{ oNasNadpis }}</h2>
+      <p>{{ oNasP1 }}</p>
+      <p>{{ oNasP2 }}</p>
+      <a href="#" class="inline-link">{{ t.viceODilne }}</a>
+    </div>
+  </div>
+</section>
+
 <section class="cta">
   <div class="container cta__inner">
     <div>
