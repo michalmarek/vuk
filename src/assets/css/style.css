@@ -377,6 +377,8 @@ img.realizace { object-fit: cover; }
 .site-footer__nav a { color: var(--footer-text); }
 .site-footer__nav a:hover { color: #fff; }
 .site-footer__meta { display: flex; gap: 24px; align-items: center; }
+.site-footer__contact a { color: var(--footer-text); }
+.site-footer__contact a:hover { color: #fff; }
 .site-footer__copy { color: var(--muted); }
 
 /* ============================================================

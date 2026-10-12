@@ -17,7 +17,7 @@
       </nav>
     </div>
     <div class="site-footer__meta">
-      <span>{{ site.telefon }} · {{ site.email }}</span>
+      <span class="site-footer__contact"><a href="tel:{{ site.telefonRaw }}">{{ site.telefon | replace("+420 ", "") }}</a> · <a href="mailto:{{ site.email }}">{{ site.email }}</a></span>
       <span class="site-footer__copy">{{ t.copyright }}</span>
     </div>
   </div>
