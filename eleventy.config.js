@@ -1,3 +1,5 @@
+import fs from "node:fs";
+
 export default function (eleventyConfig) {
   // Statická kopie všeho z src/assets → /assets (CSS, fonty, obrázky)
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
@@ -32,6 +34,17 @@ export default function (eleventyConfig) {
 
   // Omez pole na prvních n položek
   eleventyConfig.addFilter("limit", (arr, n) => (arr || []).slice(0, n));
+
+  // Vrať první fotku, jejíž soubor na disku skutečně existuje; jinak null
+  // (chybějící/překlepnutou cestu tak nahradíme placeholderem a upozorníme).
+  eleventyConfig.addFilter("existujiciFoto", (foto) => {
+    for (const p of foto || []) {
+      const disk = String(p).replace(/^\/assets\//, "src/assets/");
+      if (fs.existsSync(disk)) return p;
+      console.warn(`[realizace] fotka zadaná, ale soubor chybí: ${p} → placeholder`);
+    }
+    return null;
+  });
 
   return {
     dir: { input: "src", output: "_site", includes: "_includes", data: "_data" },
