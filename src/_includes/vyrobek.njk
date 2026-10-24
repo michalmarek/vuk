@@ -66,19 +66,132 @@ activeNav: vyrobky
 <section class="pgalerie"><div class="container">
   <h2 class="pgalerie__nadpis">{{ t.ukazkyRealizaci }}</h2>
   <div class="pgalerie__grid">
+    {%- set maxNahledu = 4 %}
     {%- for r in galerie %}
-    <div class="pgalerie__item">
-      {%- set foto = r.foto | existujiciFoto %}
-      {%- if foto %}
-      <img class="pgalerie__foto" src="{{ foto }}" alt="{{ r.nazev }}, {{ r.mesto }}" loading="lazy">
+    {%- set fota = r.foto | existujiciFota %}
+    {%- set popis = r.nazev + ", " + r.mesto %}
+    {%- set otevrit = t.otevritGalerii or "Otevřít galerii" %}
+    <div class="pgalerie__item" {% if fota.length %}data-fota="{{ fota | dump | escape }}" data-popis="{{ popis }}"{% endif %}>
+      {%- if fota.length %}
+      <button type="button" class="pgalerie__hlavni" data-lb="0" aria-label="{{ otevrit }}: {{ popis }}">
+        <img src="{{ fota[0] }}" alt="{{ popis }}" loading="lazy">
+      </button>
       {%- else %}
-      <div class="pgalerie__foto ph"><span>foto realizace</span></div>
+      <div class="pgalerie__hlavni ph" aria-hidden="true"></div>
       {%- endif %}
+      {# Řádek náhledů je vždy (prázdný jen jako rozpěrka), aby popisky byly v jedné lince #}
+      <div class="pgalerie__thumbs">
+        {%- if fota.length > 1 %}
+        {%- set zbyva = fota.length - 1 - maxNahledu %}
+        {%- for f in fota %}
+        {%- if loop.index0 >= 1 and loop.index0 <= maxNahledu %}
+        <button type="button" class="pgalerie__thumb" data-lb="{{ loop.index0 }}" aria-label="{{ otevrit }}: {{ popis }}">
+          <img src="{{ f }}" alt="" loading="lazy">
+          {%- if loop.index0 == maxNahledu and zbyva > 0 %}<span class="pgalerie__more">+{{ zbyva }}</span>{%- endif %}
+        </button>
+        {%- endif %}
+        {%- endfor %}
+        {%- else %}
+        <span class="pgalerie__thumb pgalerie__thumb--spacer" aria-hidden="true"></span>
+        {%- endif %}
+      </div>
       <div class="pgalerie__caption"><span class="pgalerie__name">{{ r.nazev }}</span><span class="pgalerie__city">{{ r.mesto }}</span></div>
     </div>
     {%- endfor %}
   </div>
+  {# Postupné odkrývání – tlačítko se zobrazí jen s JS; bez JS jsou vidět všechny realizace #}
+  {%- if galerie.length > 8 %}
+  <div class="pgalerie__viac">
+    <button type="button" class="btn btn--ghost pgalerie__viac-btn" hidden>{{ t.zobrazitDalsi or "Zobrazit další realizace" }}</button>
+  </div>
+  {%- endif %}
 </div></section>
+
+{# Lightbox – velké foto + náhledy ostatních; ovládá se přes data-fota na dlaždici #}
+<dialog class="lightbox" id="lightbox" aria-label="Galerie realizace">
+  <button type="button" class="lightbox__close" data-lb-close aria-label="Zavřít">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M5 5 19 19M19 5 5 19"/></svg>
+  </button>
+  <figure class="lightbox__stage">
+    <button type="button" class="lightbox__nav lightbox__nav--prev" data-lb-prev aria-label="Předchozí">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M15 4 7 12l8 8"/></svg>
+    </button>
+    <img class="lightbox__img" alt="">
+    <button type="button" class="lightbox__nav lightbox__nav--next" data-lb-next aria-label="Další">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"><path d="M9 4 17 12l-8 8"/></svg>
+    </button>
+    <figcaption class="lightbox__caption"></figcaption>
+  </figure>
+  <div class="lightbox__thumbs" role="tablist"></div>
+</dialog>
+<script>
+(() => {
+  // Postupné odkrývání realizací po dávkách (8 = dva řádky)
+  const grid = document.querySelector(".pgalerie__grid");
+  const viacBtn = document.querySelector(".pgalerie__viac-btn");
+  if (grid && viacBtn) {
+    const items = [...grid.children];
+    const DAVKA = 8;
+    let zobrazeno = DAVKA;
+    if (items.length > DAVKA) {
+      const update = () => {
+        items.forEach((it, idx) => { it.hidden = idx >= zobrazeno; });
+        viacBtn.hidden = zobrazeno >= items.length;
+      };
+      viacBtn.addEventListener("click", () => { zobrazeno += DAVKA; update(); });
+      update();
+    }
+  }
+
+  const dlg = document.getElementById("lightbox");
+  if (!dlg || !dlg.showModal) return;
+  const img = dlg.querySelector(".lightbox__img");
+  const cap = dlg.querySelector(".lightbox__caption");
+  const thumbs = dlg.querySelector(".lightbox__thumbs");
+  const prevBtn = dlg.querySelector("[data-lb-prev]");
+  const nextBtn = dlg.querySelector("[data-lb-next]");
+  let fota = [], i = 0;
+
+  const show = (n) => {
+    i = (n + fota.length) % fota.length;
+    img.src = fota[i];
+    [...thumbs.children].forEach((b, k) => b.setAttribute("aria-selected", k === i));
+  };
+  const open = (item, start) => {
+    try { fota = JSON.parse(item.dataset.fota); } catch { return; }
+    cap.textContent = item.dataset.popis || "";
+    img.alt = item.dataset.popis || "";
+    thumbs.innerHTML = "";
+    thumbs.hidden = fota.length < 2;
+    prevBtn.hidden = nextBtn.hidden = fota.length < 2;
+    fota.forEach((src, k) => {
+      const b = document.createElement("button");
+      b.type = "button";
+      b.className = "lightbox__thumb";
+      b.innerHTML = '<img src="' + src + '" alt="" loading="lazy">';
+      b.addEventListener("click", () => show(k));
+      thumbs.appendChild(b);
+    });
+    show(start || 0);
+    dlg.showModal();
+  };
+
+  document.querySelectorAll(".pgalerie__item[data-fota]").forEach((item) =>
+    item.querySelectorAll("[data-lb]").forEach((el) =>
+      el.addEventListener("click", () => open(item, +el.dataset.lb))
+    )
+  );
+  dlg.querySelector("[data-lb-prev]").addEventListener("click", () => show(i - 1));
+  dlg.querySelector("[data-lb-next]").addEventListener("click", () => show(i + 1));
+  dlg.querySelector("[data-lb-close]").addEventListener("click", () => dlg.close());
+  dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+  document.addEventListener("keydown", (e) => {
+    if (!dlg.open) return;
+    if (e.key === "ArrowLeft") show(i - 1);
+    if (e.key === "ArrowRight") show(i + 1);
+  });
+})();
+</script>
 {%- endif %}
 
 {# ---------- FAQ + kontaktní box ---------- #}

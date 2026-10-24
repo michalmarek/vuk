@@ -32,9 +32,10 @@ export default function (eleventyConfig) {
     (items || []).filter((r) => r.homepage)
   );
 
-  // Reference daného výrobku (pro galerii na stránce výrobku)
+  // Reference daného výrobku (pro galerii na stránce výrobku).
+  // "vyrobek" smí být řetězec i pole – reference může patřit víc výrobkům.
   eleventyConfig.addFilter("proVyrobek", (items, key) =>
-    (items || []).filter((r) => r.vyrobek === key)
+    (items || []).filter((r) => [].concat(r.vyrobek || []).includes(key))
   );
 
   // Název výrobku podle translationKey (pro štítky u FAQ, přeloží se sám)
@@ -65,8 +66,18 @@ export default function (eleventyConfig) {
   // Omez pole na prvních n položek
   eleventyConfig.addFilter("limit", (arr, n) => (arr || []).slice(0, n));
 
-  // Vrať první fotku, jejíž soubor na disku skutečně existuje; jinak null
-  // (chybějící/překlepnutou cestu tak nahradíme placeholderem a upozorníme).
+  // Vrať jen ty fotky z pole, jejichž soubor na disku skutečně existuje
+  // (chybějící/překlepnutou cestu tak zahodíme a upozorníme v konzoli).
+  eleventyConfig.addFilter("existujiciFota", (foto) =>
+    (foto || []).filter((p) => {
+      const disk = String(p).replace(/^\/assets\//, "src/assets/");
+      if (fs.existsSync(disk)) return true;
+      console.warn(`[realizace] fotka zadaná, ale soubor chybí: ${p} → placeholder`);
+      return false;
+    })
+  );
+
+  // Vrať první existující fotku (pro úvodní stránku, kde je 1 foto = 1 reference).
   eleventyConfig.addFilter("existujiciFoto", (foto) => {
     for (const p of foto || []) {
       const disk = String(p).replace(/^\/assets\//, "src/assets/");
