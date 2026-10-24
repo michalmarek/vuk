@@ -235,7 +235,6 @@ img.realizace { object-fit: cover; }
   display: flex; flex-direction: column;
 }
 .cta__address strong { font-weight: 700; }
-.cta__ico { padding-top: 12px; }
 
 /* ============================================================
    Stránka výrobku

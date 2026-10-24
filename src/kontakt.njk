@@ -37,7 +37,11 @@ perex: "Zavolejte nebo napište s popisem projektu. Rádi přijedeme na místo a
     <span class="kontakt__line"><strong>{{ site.nazev }}</strong></span>
     <span class="kontakt__line">{{ site.adresa.ulice }}</span>
     <span class="kontakt__line">{{ site.adresa.mesto }}</span>
-    <span class="kontakt__line">IČO: {{ site.ico }}</span>
     <a class="kontakt__maplink" href="{{ site.mapaUrl }}" target="_blank" rel="noopener">Zobrazit na mapě →</a>
+    <div class="kontakt__ident">
+      <span class="kontakt__line">IČ: {{ site.ico }}</span>
+      <span class="kontakt__line">DIČ: {{ site.dic }}</span>
+      <span class="kontakt__line">Číslo účtu: {{ site.cisloUctu }}</span>
+    </div>
   </aside>
 </div></section>

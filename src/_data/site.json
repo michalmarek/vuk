@@ -7,7 +7,9 @@
     "ulice": "Domažlická 1123/194",
     "mesto": "318 00 Plzeň (areál ESSPE)"
   },
-  "ico": "00000000",
+  "ico": "25219375",
+  "dic": "CZ25219375",
+  "cisloUctu": "206 727 467/0600",
   "mapaUrl": "https://www.google.com/maps/place/Vuk+objekt+s.r.o./@49.7315911,13.3134173,17z/data=!3m1!4b1!4m6!3m5!1s0x470aee1f76ba3917:0xeae658873d464b1!8m2!3d49.7315911!4d13.3159976!16s%2Fg%2F1hhjcj_fj!5m1!1e4?entry=ttu",
   "kontaktOsoba": {
     "jmeno": "Jana Fialová"
