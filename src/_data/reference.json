@@ -1,12 +1,12 @@
 [
-  { "nazev": "Hlavní nádraží", "mesto": "Praha", "typ": "obklady", "vyrobek": ["obklady"], "homepage": true, "foto": [] },
-  { "nazev": "Velká synagoga", "mesto": "Plzeň", "typ": "dlazba", "vyrobek": ["dlazba"], "homepage": true, "foto": [] },
-  { "nazev": "Café Imperial", "mesto": "Praha", "typ": "dlazba", "vyrobek": ["dlazba"], "homepage": true, "foto": [] },
-  { "nazev": "Obecní dům", "mesto": "Praha", "typ": "dlazba", "vyrobek": ["dlazba"], "homepage": true, "foto": [] },
-  { "nazev": "Zámek Kratochvíle", "mesto": "Netolice", "typ": "dlazba", "vyrobek": ["dlazba"], "homepage": true, "foto": [] },
-  { "nazev": "Budova radnice", "mesto": "Pardubice", "typ": "dlazba", "vyrobek": ["dlazba"], "homepage": false, "foto": [] },
-  { "nazev": "Česká spořitelna Rytířská", "mesto": "Praha", "typ": "dlazba", "vyrobek": ["dlazba"], "homepage": false, "foto": [] },
-  { "nazev": "Zemské hejtmanství", "mesto": "Brno", "typ": "dlazba", "vyrobek": ["dlazba"], "homepage": false, "foto": [] },
-  { "nazev": "Ekologické muzeum", "mesto": "Praha-Bubeneč", "typ": "dlazba", "vyrobek": ["dlazba"], "homepage": false, "foto": [] },
-  { "nazev": "Nemocnice", "mesto": "Ósaka", "typ": "plastiky", "vyrobek": ["specialni"], "homepage": false, "foto": [] }
+  { "nazev": "Hlavní nádraží", "mesto": "Praha", "slug": "hlavni-nadrazi-praha", "typ": "obklady", "vyrobek": ["obklady"], "homepage": true },
+  { "nazev": "Velká synagoga", "mesto": "Plzeň", "slug": "velka-synagoga-plzen", "typ": "dlazba", "vyrobek": ["dlazba"], "homepage": true },
+  { "nazev": "Café Imperial", "mesto": "Praha", "slug": "cafe-imperial-praha", "typ": "dlazba", "vyrobek": ["dlazba"], "homepage": true },
+  { "nazev": "Obecní dům", "mesto": "Praha", "slug": "obecni-dum-praha", "typ": "dlazba", "vyrobek": ["dlazba"], "homepage": true },
+  { "nazev": "Zámek Kratochvíle", "mesto": "Netolice", "slug": "zamek-kratochvile-netolice", "typ": "dlazba", "vyrobek": ["dlazba"], "homepage": true },
+  { "nazev": "Budova radnice", "mesto": "Pardubice", "slug": "budova-radnice-pardubice", "typ": "dlazba", "vyrobek": ["dlazba"], "homepage": false },
+  { "nazev": "Česká spořitelna Rytířská", "mesto": "Praha", "slug": "ceska-sporitelna-rytirska-praha", "typ": "dlazba", "vyrobek": ["dlazba"], "homepage": false },
+  { "nazev": "Zemské hejtmanství", "mesto": "Brno", "slug": "zemske-hejtmanstvi-brno", "typ": "dlazba", "vyrobek": ["dlazba"], "homepage": false },
+  { "nazev": "Ekologické muzeum", "mesto": "Praha-Bubeneč", "slug": "ekologicke-muzeum-praha-bubenec", "typ": "dlazba", "vyrobek": ["dlazba"], "homepage": false },
+  { "nazev": "Nemocnice", "mesto": "Ósaka", "slug": "nemocnice-osaka", "typ": "plastiky", "vyrobek": ["specialni"], "homepage": false }
 ]

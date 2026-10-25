@@ -66,37 +66,9 @@ activeNav: vyrobky
 <section class="pgalerie"><div class="container">
   <h2 class="pgalerie__nadpis">{{ t.ukazkyRealizaci }}</h2>
   <div class="pgalerie__grid">
-    {%- set maxNahledu = 4 %}
-    {%- for r in galerie %}
-    {%- set fota = r.foto | existujiciFota %}
-    {%- set popis = r.nazev + ", " + r.mesto %}
     {%- set otevrit = t.otevritGalerii or "Otevřít galerii" %}
-    <div class="pgalerie__item" {% if fota.length %}data-fota="{{ fota | dump | escape }}" data-popis="{{ popis }}"{% endif %}>
-      {%- if fota.length %}
-      <button type="button" class="pgalerie__hlavni" data-lb="0" aria-label="{{ otevrit }}: {{ popis }}">
-        <img src="{{ fota[0] }}" alt="{{ popis }}" loading="lazy">
-      </button>
-      {%- else %}
-      <div class="pgalerie__hlavni ph" aria-hidden="true"></div>
-      {%- endif %}
-      {# Řádek náhledů je vždy (prázdný jen jako rozpěrka), aby popisky byly v jedné lince #}
-      <div class="pgalerie__thumbs">
-        {%- if fota.length > 1 %}
-        {%- set zbyva = fota.length - 1 - maxNahledu %}
-        {%- for f in fota %}
-        {%- if loop.index0 >= 1 and loop.index0 <= maxNahledu %}
-        <button type="button" class="pgalerie__thumb" data-lb="{{ loop.index0 }}" aria-label="{{ otevrit }}: {{ popis }}">
-          <img src="{{ f }}" alt="" loading="lazy">
-          {%- if loop.index0 == maxNahledu and zbyva > 0 %}<span class="pgalerie__more">+{{ zbyva }}</span>{%- endif %}
-        </button>
-        {%- endif %}
-        {%- endfor %}
-        {%- else %}
-        <span class="pgalerie__thumb pgalerie__thumb--spacer" aria-hidden="true"></span>
-        {%- endif %}
-      </div>
-      <div class="pgalerie__caption"><span class="pgalerie__name">{{ r.nazev }}</span><span class="pgalerie__city">{{ r.mesto }}</span></div>
-    </div>
+    {%- for r in galerie %}
+    {% dlazdiceRealizace r, otevrit %}
     {%- endfor %}
   </div>
   {# Postupné odkrývání – tlačítko se zobrazí jen s JS; bez JS jsou vidět všechny realizace #}

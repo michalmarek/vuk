@@ -16,6 +16,7 @@
     "@11ty/eleventy": "^3.0.0"
   },
   "dependencies": {
+    "@11ty/eleventy-img": "^7.1.1",
     "@fontsource/zilla-slab": "^5.1.1"
   }
 }

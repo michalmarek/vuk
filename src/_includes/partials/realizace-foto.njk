@@ -1,9 +1,0 @@
-{#- Vykreslí fotku realizace, nebo šrafovaný placeholder, když fotka chybí
-    (prázdná cesta i zadaná cesta s chybějícím souborem → placeholder).
-    Očekává: r (reference), variant ("wide" | "sq") -#}
-{%- set foto = r.foto | existujiciFoto %}
-{%- if foto %}
-<img class="realizace realizace--{{ variant }}" src="{{ foto }}" alt="{{ r.nazev }}, {{ r.mesto }}" loading="lazy">
-{%- else %}
-<div class="realizace realizace--{{ variant }} ph"><span>{{ r.nazev }}, {{ r.mesto }}</span></div>
-{%- endif %}

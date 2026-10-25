@@ -1,8 +1,14 @@
-import fs from "node:fs";
+import { registrujObrazky } from "./obrazky.js";
 
 export default function (eleventyConfig) {
   // Statická kopie všeho z src/assets → /assets (CSS, fonty, obrázky)
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+
+  // Zpracování fotek referencí (eleventy-img): shortcody dlazdiceRealizace, realizaceFoto
+  registrujObrazky(eleventyConfig);
+
+  // src/reference = jen originály pro eleventy-img, Eleventy odtud nic nerenderuje
+  eleventyConfig.ignores.add("src/reference/**");
 
   // Kolekce výrobků, seřazená podle pole `order` (napříč jazyky)
   eleventyConfig.addCollection("vyrobek", (c) =>
@@ -65,27 +71,6 @@ export default function (eleventyConfig) {
 
   // Omez pole na prvních n položek
   eleventyConfig.addFilter("limit", (arr, n) => (arr || []).slice(0, n));
-
-  // Vrať jen ty fotky z pole, jejichž soubor na disku skutečně existuje
-  // (chybějící/překlepnutou cestu tak zahodíme a upozorníme v konzoli).
-  eleventyConfig.addFilter("existujiciFota", (foto) =>
-    (foto || []).filter((p) => {
-      const disk = String(p).replace(/^\/assets\//, "src/assets/");
-      if (fs.existsSync(disk)) return true;
-      console.warn(`[realizace] fotka zadaná, ale soubor chybí: ${p} → placeholder`);
-      return false;
-    })
-  );
-
-  // Vrať první existující fotku (pro úvodní stránku, kde je 1 foto = 1 reference).
-  eleventyConfig.addFilter("existujiciFoto", (foto) => {
-    for (const p of foto || []) {
-      const disk = String(p).replace(/^\/assets\//, "src/assets/");
-      if (fs.existsSync(disk)) return p;
-      console.warn(`[realizace] fotka zadaná, ale soubor chybí: ${p} → placeholder`);
-    }
-    return null;
-  });
 
   return {
     dir: { input: "src", output: "_site", includes: "_includes", data: "_data" },
