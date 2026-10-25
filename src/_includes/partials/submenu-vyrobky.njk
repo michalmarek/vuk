@@ -1,11 +1,9 @@
 {%- set vyrobky = collections.vyrobek | byLang(lang) %}
-{%- set uiIcons = ["historicka-dlazba", "obklady-tvarovky", "exterierova-keramika", "technicka-keramika", "specialni-vyroba", "kachle-vytapeni"] %}
 <div class="submenu{{ ' submenu--compact' if submenuCompact }}">
   <div class="container submenu__inner">
     {%- for p in vyrobky %}
-    {%- set iconFile = (p.data.icon + "-ui") if p.data.icon in uiIcons else p.data.icon %}
     <a href="{{ p.url }}" class="submenu__item{{ ' is-active' if p.data.translationKey == activeVyrobek }}">
-      <span class="submenu__icon">{% include "icons/" + iconFile + ".svg" %}</span>
+      <span class="submenu__icon">{% include "icons/" + p.data.icon + "-ui.svg" %}</span>
       <span class="submenu__name">{{ p.data.name }}</span>
     </a>
     {%- endfor %}
