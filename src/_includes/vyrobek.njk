@@ -12,7 +12,10 @@ activeNav: vyrobky
 {% include "partials/submenu-vyrobky.njk" %}
 
 {# ---------- Hero (fullbleed) ---------- #}
-<section class="phero" style="background-image:linear-gradient(rgba(46,42,44,.45),rgba(46,42,44,.55)),url('{{ heroFoto or img }}')">
+{%- set heroSrc = heroFoto or img %}
+<section class="phero">
+  {% obrazek heroSrc, "", "phero__img", "100vw", "hero" %}
+  <span class="phero__overlay" aria-hidden="true"></span>
   <div class="container phero__inner">
     <p class="phero__crumb"><a href="{{ vyrobkyHref }}">{{ t.nav.vyrobky }}</a> / {{ name }}</p>
     <div class="phero__body">
@@ -45,7 +48,7 @@ activeNav: vyrobky
 <section class="pnabidka{{ ' pnabidka--foto' if nabidka.foto }}"><div class="container">
   {%- if nabidka.foto %}
   <div class="pnabidka__fotky">
-    {%- for f in nabidka.foto %}<img src="{{ f }}" alt="" loading="lazy" class="pnabidka__foto">{%- endfor %}
+    {%- for f in nabidka.foto %}{% obrazek f, "", "pnabidka__foto", "(max-width: 700px) 50vw, 25vw", "obsah" %}{%- endfor %}
   </div>
   {%- endif %}
   <div class="pnabidka__text">
@@ -198,7 +201,7 @@ activeNav: vyrobky
     {%- for p in collections.vyrobek | byLang(lang) %}
     {%- if p.data.translationKey != translationKey %}
     <a href="{{ p.url }}" class="pdalsi__item">
-      <img src="{{ p.data.img }}" alt="{{ p.data.name }}" loading="lazy">
+      {% obrazek p.data.img, p.data.name, "", "(max-width: 700px) 50vw, 25vw", "karta" %}
       <span>{{ p.data.name }}</span>
     </a>
     {%- endif %}

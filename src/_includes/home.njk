@@ -16,7 +16,7 @@ layout: base.njk
         <a href="mailto:{{ site.email }}" class="btn btn--ghost">{{ t.napisteNam }}</a>
       </div>
     </div>
-    <img class="hero__img" src="{{ heroImg }}" alt="{{ heroImgAlt }}">
+    {% obrazek heroImg, heroImgAlt, "hero__img", "(max-width: 700px) 100vw, 50vw", "hero" %}
   </div>
 </section>
 
@@ -31,7 +31,19 @@ layout: base.njk
     </div>
     <div class="card-grid">
       {%- for p in collections.vyrobek | byLang(lang) %}
-      {% include "partials/card-vyrobek.njk" %}
+      <a href="{{ p.url }}" class="card">
+        <div class="card__media">
+          {% obrazek p.data.img, p.data.name, "", "(max-width: 700px) 50vw, 25vw", "karta" %}
+          <span class="card__icon">{% include "icons/" + p.data.icon + ".svg" %}</span>
+        </div>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__name">{{ p.data.name }}</span>
+            <span class="card__arrow" aria-hidden="true">→</span>
+          </div>
+          <p class="card__line">{{ p.data.line }}</p>
+        </div>
+      </a>
       {%- endfor %}
     </div>
   </div>
@@ -53,7 +65,7 @@ layout: base.njk
     <div class="order__intro">
       <h2>{{ jakNadpis }}</h2>
       <p>{{ jakPerex }}</p>
-      <img class="order__photo" src="{{ jakFoto }}" alt="{{ jakFotoAlt }}" loading="lazy">
+      {% obrazek jakFoto, jakFotoAlt, "order__photo", "(max-width: 700px) 100vw, 50vw", "obsah" %}
     </div>
     <div class="order__steps">
       {%- for k in t.kroky %}
@@ -95,7 +107,7 @@ layout: base.njk
 
 <section class="about">
   <div class="container">
-    <img class="about__photo" src="{{ oNasFoto }}" alt="{{ oNasFotoAlt }}" loading="lazy">
+    {% obrazek oNasFoto, oNasFotoAlt, "about__photo", "(max-width: 700px) 100vw, 50vw", "obsah" %}
     <div class="about__text">
       <h2>{{ oNasNadpis }}</h2>
       <p>{{ oNasP1 }}</p>

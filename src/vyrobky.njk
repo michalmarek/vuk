@@ -17,7 +17,19 @@ description: "Šest oborů zakázkové keramické výroby: historická dlažba, 
     </div>
     <div class="card-grid">
       {%- for p in collections.vyrobek | byLang(lang) %}
-      {% include "partials/card-vyrobek.njk" %}
+      <a href="{{ p.url }}" class="card">
+        <div class="card__media">
+          {% obrazek p.data.img, p.data.name, "", "(max-width: 700px) 50vw, 25vw", "karta" %}
+          <span class="card__icon">{% include "icons/" + p.data.icon + ".svg" %}</span>
+        </div>
+        <div class="card__body">
+          <div class="card__head">
+            <span class="card__name">{{ p.data.name }}</span>
+            <span class="card__arrow" aria-hidden="true">→</span>
+          </div>
+          <p class="card__line">{{ p.data.line }}</p>
+        </div>
+      </a>
       {%- endfor %}
     </div>
   </div>

@@ -2,7 +2,7 @@
 <section class="foto-pas"><div class="container">
   <div class="foto-pas__grid">
     {%- for f in fotky %}
-    <img class="foto-pas__img" src="{{ f.src }}" alt="{{ f.alt }}" loading="lazy">
+    {% obrazek f.src, f.alt, "foto-pas__img", "(max-width: 700px) 100vw, 33vw", "karta" %}
     {%- endfor %}
   </div>
 </div></section>

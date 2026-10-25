@@ -101,7 +101,56 @@ async function realizaceFoto(r, variant) {
   return `<div class="${trida} ph"><span>${esc(popis)}</span></div>`;
 }
 
+// ---------------------------------------------------------------------------
+// Prezentační fotky (hero, o nás, nabídka, kontakt …) – oddělené od referencí.
+// Originály: src/media/ (MIMO passthrough). Varianty na web: /assets/img/.
+// ---------------------------------------------------------------------------
+const MEDIA_DIR = "src/media";
+const MEDIA_OUT = "_site/assets/img";
+const MEDIA_URL = "/assets/img/";
+
+// Sady šířek podle role fotky na stránce.
+const PROFILY = {
+  hero: [480, 768, 1280, 1920, 2560], // fullbleed / velké přes půl šířky
+  obsah: [480, 768, 1200],            // běžná obsahová fotka
+  karta: [320, 480, 768],             // karty výrobků, foto-pás
+};
+
+// Cesta v datech ("/assets/img/09.jpg" i "09.jpg") → originál v src/media/.
+const mediaZdroj = (cesta) => path.join(MEDIA_DIR, path.basename(String(cesta)));
+
+const mediaFilename = (id, src, width, format) =>
+  `${path.basename(src, path.extname(src))}-${width}-${id.slice(0, 8)}.${format}`;
+
+async function obrazekMedia(cesta, alt, trida, sizes, profil) {
+  const src = mediaZdroj(cesta);
+  if (!fs.existsSync(src)) {
+    console.warn(`[media] fotka chybí: ${cesta} (${src})`);
+    return "";
+  }
+  const m = await Image(src, {
+    widths: PROFILY[profil] || PROFILY.obsah,
+    formats: ["webp"], // jen webp → generateHTML vrátí čistý <img srcset> bez <picture> wrapperu
+    outputDir: MEDIA_OUT,
+    urlPath: MEDIA_URL,
+    filenameFormat: mediaFilename,
+  });
+  const jeHero = profil === "hero";
+  return Image.generateHTML(m, {
+    alt: alt || "",
+    sizes: sizes || "100vw",
+    loading: jeHero ? "eager" : "lazy",      // hero je nad přehybem
+    decoding: "async",
+    ...(jeHero ? { fetchpriority: "high" } : {}),
+    ...(trida ? { class: trida } : {}),
+  });
+}
+
 export function registrujObrazky(eleventyConfig) {
   eleventyConfig.addNunjucksAsyncShortcode("dlazdiceRealizace", (r, otevrit) => dlazdiceRealizace(r, otevrit));
   eleventyConfig.addNunjucksAsyncShortcode("realizaceFoto", (r, variant) => realizaceFoto(r, variant));
+  // obrazek(cesta, alt, trida, sizes, profil) – profil: "hero" | "obsah" | "karta"
+  eleventyConfig.addNunjucksAsyncShortcode("obrazek", (cesta, alt, trida, sizes, profil) =>
+    obrazekMedia(cesta, alt, trida, sizes, profil)
+  );
 }

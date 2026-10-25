@@ -4,7 +4,7 @@
     <div class="ppostup__intro">
       {%- if postup.nadpis %}<h2>{{ postup.nadpis }}</h2>{%- endif %}
       {%- if postup.perex %}<p>{{ postup.perex }}</p>{%- endif %}
-      {%- if postup.foto %}<img class="ppostup__foto" src="{{ postup.foto }}" alt="{{ postup.fotoAlt or '' }}" loading="lazy">{%- endif %}
+      {%- if postup.foto %}{% obrazek postup.foto, postup.fotoAlt, "ppostup__foto", "(max-width: 700px) 100vw, 50vw", "obsah" %}{%- endif %}
     </div>
     <div class="ppostup__steps">
       {%- for k in postup.kroky %}

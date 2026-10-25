@@ -199,6 +199,8 @@ h1, h2, h3 { font-family: var(--serif); margin: 0; }
 .refs__mosaic { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; align-content: start; }
 .realizace { width: 100%; display: block; }
 img.realizace { object-fit: cover; }
+/* eleventy-img doplňuje width/height atributy (kvůli CLS); height:auto nechá řídit výšku poměru stran / CSS */
+img { height: auto; }
 .realizace--wide { grid-column: 1 / 3; aspect-ratio: 16/10; }
 .realizace--sq { aspect-ratio: 1; }
 .ph { background: repeating-linear-gradient(135deg, #EFEBE3 0 10px, #E7E2D8 10px 20px); display: flex; align-items: flex-end; padding: 16px; box-sizing: border-box; }
@@ -240,8 +242,10 @@ img.realizace { object-fit: cover; }
    Stránka výrobku
    ============================================================ */
 /* Hero fullbleed */
-.phero { background-size: cover; background-position: center; color: #fff; }
-.phero__inner { min-height: 560px; display: flex; flex-direction: column; justify-content: space-between; padding-top: 32px; padding-bottom: 88px; }
+.phero { position: relative; color: #fff; overflow: hidden; }
+.phero__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.phero__overlay { position: absolute; inset: 0; background: linear-gradient(rgba(46,42,44,.45), rgba(46,42,44,.55)); }
+.phero__inner { position: relative; z-index: 1; min-height: 560px; display: flex; flex-direction: column; justify-content: space-between; padding-top: 32px; padding-bottom: 88px; }
 .phero__body { display: flex; flex-direction: column; gap: 20px; }
 .phero__crumb { margin: 0; font-size: 13px; color: rgba(255,255,255,.8); }
 .phero__crumb a { color: rgba(255,255,255,.8); }
