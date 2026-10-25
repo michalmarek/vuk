@@ -11,7 +11,7 @@ const SRC_DIR = "src/reference";
 const OUT_DIR = "_site/foto";
 const URL_PATH = "/foto/";
 const WIDTHS = [160, 320, 640, 1024, 1600];
-const FORMATS = ["webp", "jpeg"];
+const FORMATS = ["webp"]; // jen webp → <img srcset> bez <picture> (jinak picture rozbíjí grid/poměr u mozaiky)
 const IMG_EXT = /\.(jpe?g|png)$/i;
 
 // Fotky reference = obsah složky src/reference/<slug>/, seřazené podle názvu.
@@ -59,14 +59,15 @@ async function velkaUrl(src) {
 }
 
 // Celá dlaždice realizace do galerie na stránce výrobku.
-async function dlazdiceRealizace(r, otevrit, maxNahledu = 4) {
+async function dlazdiceRealizace(r, otevrit, typySlovnik, maxNahledu = 4) {
   const fota = fotaReference(r.slug);
   const popis = `${r.nazev}, ${r.mesto}`;
+  const typy = [].concat(r.vyrobek || []).map((k) => (typySlovnik && typySlovnik[k]) || k).join(", ");
   let hlavni, thumbs, dataAttrs = "";
 
   if (fota.length) {
     const velke = await Promise.all(fota.map(velkaUrl));
-    dataAttrs = ` data-fota="${esc(JSON.stringify(velke))}" data-popis="${esc(popis)}"`;
+    dataAttrs = ` data-fota="${esc(JSON.stringify(velke))}" data-popis="${esc(popis)}" data-typ="${esc(typy)}"`;
 
     const hImg = await obrazek(fota[0], popis, "(max-width: 700px) 50vw, 300px");
     hlavni = `<button type="button" class="pgalerie__hlavni" data-lb="0" aria-label="${esc(otevrit)}: ${esc(popis)}">${hImg}</button>`;
@@ -147,7 +148,7 @@ async function obrazekMedia(cesta, alt, trida, sizes, profil) {
 }
 
 export function registrujObrazky(eleventyConfig) {
-  eleventyConfig.addNunjucksAsyncShortcode("dlazdiceRealizace", (r, otevrit) => dlazdiceRealizace(r, otevrit));
+  eleventyConfig.addNunjucksAsyncShortcode("dlazdiceRealizace", (r, otevrit, typy) => dlazdiceRealizace(r, otevrit, typy));
   eleventyConfig.addNunjucksAsyncShortcode("realizaceFoto", (r, variant) => realizaceFoto(r, variant));
   // obrazek(cesta, alt, trida, sizes, profil) – profil: "hero" | "obsah" | "karta"
   eleventyConfig.addNunjucksAsyncShortcode("obrazek", (cesta, alt, trida, sizes, profil) =>

@@ -18,7 +18,23 @@ perex: "Každá zakázka je u nás jedinečná. Rozumíme tomu, že každý proj
   <p class="page-head__perex">{{ perex }}</p>
 </div></section>
 
-{% include "partials/postup.njk" %}
+<section class="ppostup">
+  <div class="container">
+    <div class="ppostup__intro">
+      {%- if postup.nadpis %}<h2>{{ postup.nadpis }}</h2>{%- endif %}
+      {%- if postup.perex %}<p>{{ postup.perex }}</p>{%- endif %}
+      {%- if postup.foto %}{% obrazek postup.foto, postup.fotoAlt, "ppostup__foto", "(max-width: 700px) 100vw, 50vw", "obsah" %}{%- endif %}
+    </div>
+    <div class="ppostup__steps">
+      {%- for k in postup.kroky %}
+      <div class="ppostup__krok">
+        <span class="ppostup__n">{% if loop.index < 10 %}0{% endif %}{{ loop.index }}</span>
+        <div><span class="ppostup__t">{{ k.nazev }}</span><span class="ppostup__d">{{ k.popis }}</span></div>
+      </div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
 
 <section class="info2"><div class="container">
   <div>

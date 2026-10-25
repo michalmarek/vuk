@@ -44,6 +44,11 @@ export default function (eleventyConfig) {
     (items || []).filter((r) => [].concat(r.vyrobek || []).includes(key))
   );
 
+  // Přeložené typy reference oddělené čárkou ("typ" smí být řetězec i pole).
+  eleventyConfig.addFilter("typyPopis", (typ, slovnik) =>
+    [].concat(typ || []).map((k) => (slovnik && slovnik[k]) || k).join(", ")
+  );
+
   // Název výrobku podle translationKey (pro štítky u FAQ, přeloží se sám)
   eleventyConfig.addFilter("nazevVyrobku", (items, key) => {
     const p = (items || []).find((x) => x.data.translationKey === key);

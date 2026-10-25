@@ -28,7 +28,10 @@
   "typy": {
     "dlazba": "dlažba",
     "obklady": "obklady",
-    "plastiky": "keramické plastiky"
+    "exterier": "exteriérová keramika",
+    "kachle": "kachle a vytápění",
+    "specialni": "speciální výroba",
+    "technicka": "technická keramika"
   },
   "postupNadpis": "Postup objednávky",
   "kroky": [

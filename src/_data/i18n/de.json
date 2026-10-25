@@ -28,7 +28,10 @@
   "typy": {
     "dlazba": "Fliesen",
     "obklady": "Verkleidungen",
-    "plastiky": "Keramikplastiken"
+    "exterier": "Außenkeramik",
+    "kachle": "Kacheln",
+    "specialni": "Spezialanfertigung",
+    "technicka": "Technische Keramik"
   },
   "postupNadpis": "Bestellablauf",
   "kroky": [
