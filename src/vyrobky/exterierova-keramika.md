@@ -7,8 +7,8 @@ name: "Exteriérová keramika"
 line: "Mrazuvzdorné fasádní obklady, parapety, římsy a balustrády."
 podtitulek: "Mrazuvzdorné prvky pro fasády"
 icon: "exterierova-keramika"
-img: "/assets/img/05.jpg"
-heroFoto: "/assets/img/05.jpg"
+img: "/assets/img/L3621.jpg"
+heroFoto: "/assets/img/L3621.jpg"
 title: "Exteriérová keramika"
 bloky:
   - nadpis: "Mrazuvzdorná keramika"
@@ -19,6 +19,9 @@ bloky:
     text: "Barvy, glazury i rozměry přizpůsobíme vašim požadavkům – pracujeme podle historických vzorů, architektonických návrhů i vašich vlastních nápadů."
 nabidka:
   nadpis: "Fasádní prvky"
+  foto:
+    - "/assets/img/47.jpg"
+    - "/assets/img/03.jpg"
   polozky:
     - "Pásky a desky včetně koncových a rohových tvarů"
     - "Parapetní okapnice"

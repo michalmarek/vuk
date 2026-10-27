@@ -19,6 +19,9 @@ bloky:
     text: "Realizovali jsme keramické plastiky pro nemocnici v japonské Ósace i designové prvky do luxusních hotelů. Každý projekt je příležitostí posunout hranice řemesla zase o kus dál."
 nabidka:
   nadpis: "S čím za námi můžete přijít"
+  foto:
+    - "/assets/img/46.jpg"
+    - "/assets/img/33.jpg"
   polozky:
     - "Architektonické prvky pro veřejné a komerční prostory"
     - "Umělecká díla a plastiky na míru"

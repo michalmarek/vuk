@@ -7,7 +7,7 @@ name: "Außenkeramik"
 line: "Frostbeständige Fassadenverkleidungen, Fensterbänke, Gesimse und Balustraden."
 podtitulek: "Frostbeständige Elemente für Fassaden"
 icon: "exterierova-keramika"
-img: "/assets/img/05.jpg"
+img: "/assets/img/L3621.jpg"
 title: "Außenkeramik"
 ---
 Frostbeständige Fassadenverkleidungen, Fensterbänke, Gesimse und Balustraden mit bautechnischem Zertifikat.

@@ -19,6 +19,9 @@ bloky:
     text: "Zajistíme obklady, tvarovky i podlahovou dlažbu v jednotném stylu – od repliky jednoho prvku až po celé řešení projektu."
 nabidka:
   nadpis: "Co vyrábíme"
+  foto:
+    - "/assets/img/35.jpg"
+    - "/assets/img/60.jpg"
   polozky:
     - "Historické obklady a obkladačky"
     - "Požlábky a požlábkové obkladačky"

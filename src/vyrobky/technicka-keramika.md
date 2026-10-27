@@ -19,6 +19,9 @@ bloky:
     text: "Naše tvarovky najdou uplatnění ve sklářství, metalurgii a slévárenství, tepelných zařízeních, spalování biomasy, chemických reaktorech i elektrotechnice."
 nabidka:
   nadpis: "Příklady našich výrobků"
+  foto:
+    - "/assets/img/L3591.jpg"
+    - "/assets/img/L3661.jpg"
   polozky:
     - "Hořákové tvarovky"
     - "Kameny pro vrchní stavby sklářských pecí"

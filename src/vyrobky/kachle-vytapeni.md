@@ -7,12 +7,15 @@ name: "Kachle a vytápění"
 line: "Kachle pro tradiční i moderní kamna a repliky historických."
 podtitulek: "Kachle pro kamna a krby"
 icon: "kachle-vytapeni"
-img: "/assets/img/L3621.jpg"
-heroFoto: "/assets/img/L3621.jpg"
+img: "/assets/img/05.jpg"
+heroFoto: "/assets/img/05.jpg"
 title: "Kachle a vytápění"
 # Bloky doplníme, až dorazí finální text k tomuto výrobku.
 nabidka:
   nadpis: "Co vyrábíme"
+  foto:
+    - "/assets/img/11.jpg"
+    - "/assets/img/06.jpg"
   polozky:
     - "Kachle pro tradiční i moderní kachlová kamna"
     - "Repliky historických kamen"

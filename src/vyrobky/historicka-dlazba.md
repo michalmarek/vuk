@@ -26,7 +26,7 @@ nabidka:
     - "Rohové a okrajové prvky pro kompletní řešení podlahy"
   poznamka: "Všechny dlaždice vyrábíme s ohledem na jejich budoucí užití – zajišťujeme odpovídající pevnost, odolnost proti obrusu a snadnou údržbu, kterou vyžaduje provoz historických objektů."
   foto:
-    - "/assets/img/21.jpg"
-    - "/assets/img/37.jpg"
+    - "/assets/img/56.jpg"
+    - "/assets/img/42.jpg"
 ---
 Nabízíme zhotovení všech tradičních vzorů dlaždic, které můžete najít v historických budovách, jako jsou divadla, radnice, kavárny, církevní stavby, kulturní památky, sokolovny a měšťanské bytové domy. Veškerá výroba dlaždic probíhá ručně s použitím tradičních metod, abychom dosáhli původního vzhledu i životnosti.
