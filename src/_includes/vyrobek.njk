@@ -22,7 +22,7 @@ activeNav: vyrobky
       <h1 class="phero__title">{{ name }}</h1>
       {%- if podtitulek %}<p class="phero__subtitle">{{ podtitulek }}</p>{%- endif %}
       <div class="btn-row">
-        <a href="tel:{{ site.telefonRaw }}" class="btn btn--primary">{{ t.zavolejte }} {{ site.telefon }}</a>
+        <a href="tel:{{ site.telefonRaw }}" class="btn btn--primary">{{ t.zavolejte }} {{ site.telefon | replace("+420 ", "") }}</a>
         <a href="mailto:{{ site.email }}" class="btn btn--ghost btn--ghost-light">{{ t.napisteNam }}</a>
       </div>
     </div>

@@ -348,7 +348,9 @@ img { height: auto; }
 .lightbox__thumb:focus-visible { opacity: 1; }
 
 /* FAQ + kontaktní box */
-.pfaq .container { padding-bottom: 104px; display: grid; grid-template-columns: minmax(0,7fr) minmax(0,5fr); gap: 72px; align-items: start; }
+.pfaq .container { padding-top: 104px; padding-bottom: 104px; display: grid; grid-template-columns: minmax(0,7fr) minmax(0,5fr); gap: 72px; align-items: start; }
+/* Silná linka pod referencemi oddělí galerii od FAQ boxu. */
+.pgalerie { border-bottom: 1px solid var(--line); }
 .pfaq__list h2 { font-weight: 700; font-size: 40px; line-height: 1.05; margin: 0 0 16px; }
 .faq-item { border-top: 1px solid var(--line); }
 .faq-item summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 24px; padding: 22px 0; font-family: var(--serif); font-weight: 700; font-size: 21px; line-height: 1.25; }
@@ -560,7 +562,7 @@ img { height: auto; }
   .ppostup__foto { aspect-ratio: 16/10; }
   .pgalerie .container { padding-top: 56px; padding-bottom: 56px; }
   .pgalerie__grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 28px 16px; }
-  .pfaq .container { grid-template-columns: 1fr; gap: 32px; padding-bottom: 56px; }
+  .pfaq .container { grid-template-columns: 1fr; gap: 32px; padding-top: 56px; padding-bottom: 56px; }
   .pdalsi__grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .faq-page .container { padding-top: 48px; padding-bottom: 56px; }
   .faq-item__body { padding-right: 24px; }
