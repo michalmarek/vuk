@@ -4,17 +4,88 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }} — VUK objekt</title>
-  {%- if description %}
-  <meta name="description" content="{{ description }}">
-  {%- endif %}
+  {%- set metaPopis = description or line or perex or site.sdileniPopis %}
+  {%- set ogTitulek = title + " — VUK objekt" %}
+  {%- set ogObrazek = site.url + (ogImage or site.sdileniObrazek) %}
+  {%- set kanonicka = site.url + page.url %}
+  {%- set ogLocale = "cs_CZ" if lang == "cs" else "de_DE" %}
+  <meta name="description" content="{{ metaPopis }}">
+  <meta name="robots" content="{{ robots or 'index, follow' }}">
+  <link rel="canonical" href="{{ kanonicka }}">
+
+  {#- Open Graph (sdílení na sociálních sítích) -#}
+  <meta property="og:type" content="{{ ogType or 'website' }}">
+  <meta property="og:title" content="{{ ogTitulek }}">
+  <meta property="og:description" content="{{ metaPopis }}">
+  <meta property="og:url" content="{{ kanonicka }}">
+  <meta property="og:image" content="{{ ogObrazek }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="VUK objekt">
+  <meta property="og:locale" content="{{ ogLocale }}">
+  {%- if lang == "cs" %}<meta property="og:locale:alternate" content="de_DE">{%- else %}<meta property="og:locale:alternate" content="cs_CZ">{%- endif %}
+
+  {#- Twitter / X -#}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ ogTitulek }}">
+  <meta name="twitter:description" content="{{ metaPopis }}">
+  <meta name="twitter:image" content="{{ ogObrazek }}">
+
+  {#- Ikony a barva prohlížeče -#}
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#AE4A84">
+
   <link rel="preload" href="/assets/fonts/zilla-slab-latin-ext-700-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/assets/css/style.css">
   <script src="/assets/js/menu.js" defer></script>
   <script src="/assets/js/submenu.js" defer></script>
   {%- set alts = collections.all | translations(translationKey) %}
   {%- for a in alts %}
-  <link rel="alternate" hreflang="{{ a.lang }}" href="{{ a.url }}">
+  <link rel="alternate" hreflang="{{ a.lang }}" href="{{ site.url }}{{ a.url }}">
   {%- endfor %}
+  {%- if alts.length %}<link rel="alternate" hreflang="x-default" href="{{ site.url }}/">{%- endif %}
+
+  {#- Strukturovaná data: firma + web -#}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": {{ (site.url + "/#firma") | dump | safe }},
+        "name": {{ site.nazev | dump | safe }},
+        "url": {{ site.url | dump | safe }},
+        "telephone": {{ site.telefonRaw | dump | safe }},
+        "email": {{ site.email | dump | safe }},
+        "image": {{ (site.url + site.sdileniObrazek) | dump | safe }},
+        "vatID": {{ site.dic | dump | safe }},
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": {{ site.adresaStrukt.ulice | dump | safe }},
+          "addressLocality": {{ site.adresaStrukt.mesto | dump | safe }},
+          "postalCode": {{ site.adresaStrukt.psc | dump | safe }},
+          "addressCountry": {{ site.adresaStrukt.zeme | dump | safe }}
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": {{ site.geo.lat }},
+          "longitude": {{ site.geo.lng }}
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": {{ (site.url + "/#web") | dump | safe }},
+        "url": {{ site.url | dump | safe }},
+        "name": "VUK objekt",
+        "publisher": { "@id": {{ (site.url + "/#firma") | dump | safe }} },
+        "inLanguage": {{ lang | dump | safe }}
+      }
+    ]
+  }
+  </script>
 </head>
 <body{{ ' class="has-sticky-bar"' if stickyBar else '' }}>
   {% include "partials/header.njk" %}

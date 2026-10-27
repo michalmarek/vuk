@@ -43,3 +43,19 @@ perex: "Nejčastější otázky k naší zakázkové výrobě. Nenašli jste odp
     {%- endif %}
   </div>
 </section>
+
+{# ---------- Strukturovaná data: FAQ ---------- #}
+{%- set vsechnyFaq = faq[lang] %}
+{%- if vsechnyFaq.length %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for q in vsechnyFaq %}
+    { "@type": "Question", "name": {{ q.otazka | dump | safe }}, "acceptedAnswer": { "@type": "Answer", "text": {{ q.odpoved | dump | safe }} } }{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}
+</script>
+{%- endif %}

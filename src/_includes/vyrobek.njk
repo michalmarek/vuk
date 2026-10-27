@@ -228,3 +228,28 @@ activeNav: vyrobky
     {%- endfor %}
   </div>
 </div></section>
+
+{# ---------- Strukturovaná data: drobečky + FAQ ---------- #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": {{ t.nav.vyrobky | dump | safe }}, "item": {{ (site.url + vyrobkyHref) | dump | safe }} },
+    { "@type": "ListItem", "position": 2, "name": {{ name | dump | safe }}, "item": {{ (site.url + page.url) | dump | safe }} }
+  ]
+}
+</script>
+{%- if faqItems.length %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {%- for q in faqItems %}
+    { "@type": "Question", "name": {{ q.otazka | dump | safe }}, "acceptedAnswer": { "@type": "Answer", "text": {{ q.odpoved | dump | safe }} } }{% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}
+</script>
+{%- endif %}
