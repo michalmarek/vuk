@@ -4,6 +4,9 @@ export default function (eleventyConfig) {
   // Statická kopie všeho z src/assets → /assets (CSS, fonty, obrázky)
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 
+  // favicon.ico do kořene webu (prohlížeče ho hledají na /favicon.ico)
+  eleventyConfig.addPassthroughCopy({ "src/favicon.ico": "favicon.ico" });
+
   // Zpracování fotek referencí (eleventy-img): shortcody dlazdiceRealizace, realizaceFoto
   registrujObrazky(eleventyConfig);
 
