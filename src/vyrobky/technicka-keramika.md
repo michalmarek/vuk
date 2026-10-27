@@ -9,6 +9,7 @@ podtitulek: "Žárovzdorné tvarovky pro průmysl"
 icon: "technicka-keramika"
 img: "/assets/img/L3584.jpg"
 heroFoto: "/assets/img/L3584.jpg"
+ogImage: "/assets/img/share/technicka-keramika.jpg"
 title: "Technická keramika"
 bloky:
   - nadpis: "Zakázková a malosériová výroba"

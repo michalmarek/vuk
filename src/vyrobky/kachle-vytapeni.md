@@ -9,6 +9,7 @@ podtitulek: "Kachle pro kamna a krby"
 icon: "kachle-vytapeni"
 img: "/assets/img/05.jpg"
 heroFoto: "/assets/img/05.jpg"
+ogImage: "/assets/img/share/kachle-vytapeni.jpg"
 title: "Kachle a vytápění"
 # Bloky doplníme, až dorazí finální text k tomuto výrobku.
 nabidka:

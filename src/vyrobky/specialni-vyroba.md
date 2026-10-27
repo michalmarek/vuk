@@ -9,6 +9,7 @@ podtitulek: "Jedinečné keramické realizace na míru"
 icon: "specialni-vyroba"
 img: "/assets/img/45.jpg"
 heroFoto: "/assets/img/45.jpg"
+ogImage: "/assets/img/share/specialni-vyroba.jpg"
 title: "Speciální výroba"
 bloky:
   - nadpis: "Když standardní výroba nestačí"

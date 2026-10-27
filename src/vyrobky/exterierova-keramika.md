@@ -9,6 +9,7 @@ podtitulek: "Mrazuvzdorné prvky pro fasády"
 icon: "exterierova-keramika"
 img: "/assets/img/L3621.jpg"
 heroFoto: "/assets/img/L3621.jpg"
+ogImage: "/assets/img/share/exterierova-keramika.jpg"
 title: "Exteriérová keramika"
 bloky:
   - nadpis: "Mrazuvzdorná keramika"

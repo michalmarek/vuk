@@ -9,6 +9,7 @@ podtitulek: "Tradiční řemeslná výroba pro historické interiéry"
 icon: "historicka-dlazba"
 img: "/assets/img/09.jpg"
 heroFoto: "/assets/img/09.jpg"
+ogImage: "/assets/img/share/historicka-dlazba.jpg"
 title: "Historická dlažba"
 bloky:
   - nadpis: "Zakázková výroba na míru"

@@ -9,6 +9,7 @@ podtitulek: "Repliky historických obkladů i prvky pro novostavby"
 icon: "obklady-tvarovky"
 img: "/assets/img/29.jpg"
 heroFoto: "/assets/img/29.jpg"
+ogImage: "/assets/img/share/obklady-tvarovky.jpg"
 title: "Obklady a tvarovky"
 bloky:
   - nadpis: "Více než 25 let zkušeností"
