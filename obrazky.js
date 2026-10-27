@@ -61,7 +61,7 @@ async function velkaUrl(src) {
 // Celá dlaždice realizace do galerie na stránce výrobku.
 async function dlazdiceRealizace(r, otevrit, typySlovnik, maxNahledu = 4) {
   const fota = fotaReference(r.slug);
-  const popis = `${r.nazev}, ${r.mesto}`;
+  const popis = r.mesto ? `${r.nazev}, ${r.mesto}` : r.nazev;
   const typy = [].concat(r.vyrobek || []).map((k) => (typySlovnik && typySlovnik[k]) || k).join(", ");
   let hlavni, thumbs, dataAttrs = "";
 
@@ -95,7 +95,7 @@ async function dlazdiceRealizace(r, otevrit, typySlovnik, maxNahledu = 4) {
 // Jedna fotka realizace pro úvodní stránku (1 foto = 1 reference), jinak placeholder.
 async function realizaceFoto(r, variant) {
   const foto = fotaReference(r.slug)[0];
-  const popis = `${r.nazev}, ${r.mesto}`;
+  const popis = r.mesto ? `${r.nazev}, ${r.mesto}` : r.nazev;
   const trida = `realizace realizace--${variant}`;
   const sizes = variant === "wide" ? "(max-width: 700px) 100vw, 66vw" : "(max-width: 700px) 50vw, 33vw";
   if (foto) return obrazek(foto, popis, sizes, trida);

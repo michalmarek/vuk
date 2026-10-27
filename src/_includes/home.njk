@@ -91,7 +91,7 @@ layout: base.njk
       <div class="refs__list">
         {%- for r in hpRefs %}
         <div class="ref-row">
-          <span class="ref-row__name">{{ r.nazev }}, {{ r.mesto }}</span>
+          <span class="ref-row__name">{{ r.nazev }}{% if r.mesto %}, {{ r.mesto }}{% endif %}</span>
           <span class="ref-row__what">{{ r.vyrobek | typyPopis(t.typy) }}</span>
         </div>
         {%- endfor %}

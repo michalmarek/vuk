@@ -40,8 +40,18 @@ export default function (eleventyConfig) {
 
   // Reference daného výrobku (pro galerii na stránce výrobku).
   // "vyrobek" smí být řetězec i pole – reference může patřit víc výrobkům.
+  // Řazení dle volitelného "poradi": číslo = priorita všude stejná,
+  // objekt = priorita per výrobek ({ obklady: 1, dlazba: 5 }). Bez čísla na konec,
+  // shody drží pořadí ze souboru (Array.sort je stabilní).
+  const poradiVyrobku = (r, key) => {
+    const p = r.poradi;
+    const v = p && typeof p === "object" ? p[key] : p;
+    return typeof v === "number" ? v : Infinity;
+  };
   eleventyConfig.addFilter("proVyrobek", (items, key) =>
-    (items || []).filter((r) => [].concat(r.vyrobek || []).includes(key))
+    (items || [])
+      .filter((r) => [].concat(r.vyrobek || []).includes(key))
+      .sort((a, b) => poradiVyrobku(a, key) - poradiVyrobku(b, key))
   );
 
   // Přeložené typy reference oddělené čárkou ("typ" smí být řetězec i pole).
